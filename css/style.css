@@ -1,0 +1,38 @@
+footer {
+    background-color: #111112;
+    border-top: 4px solid var(--brand-green);
+    font-size: 0.8rem;
+}
+
+.texto-informativo {
+    line-height: 1.6;
+    color: #8E8E93 !important;
+}
+
+.titulo-footer {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.lista-ecosistema .lista-plataforma {
+    color: #AEAEB2;
+}
+
+.linea-divisora {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 24px 0;
+}
+
+.tramites-legales {
+    font-size: 0.7rem;
+}
+
+.informacion-adicional {
+    font-size: 0.65rem;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.informacion-universidad {
+    font-size: 0.6rem;
+}

@@ -1,0 +1,302 @@
+:root {
+    --brand-green: #2E7D32;
+    --brand-green-dark: #1B5E20;
+    --brand-green-light: #E8F5E9;
+    --brand-orange: #EF6C00;
+    --brand-teal: #00695C;
+    --brand-danger: #C62828;
+    --brand-info: #1565C0;
+    --text-main: #1C1C1E;
+    --text-muted: #636366;
+    --bg-premium: #F9FBF9;
+    --bg-card: #FFFFFF;
+    --border-card: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f4;
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
+.site-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================= Nav =============================*/
+.app-navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand-title {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--brand-green);
+    letter-spacing: -0.6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+/* ============================= Boton de log out ============================= */
+.btn-logout-custom {
+    background-color: #FAFAFC;
+    color: #3A3A3C;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 1px solid #E5E5EA;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-logout-custom:hover {
+    background-color: rgba(198, 40, 40, 0.06);
+    color: var(--brand-danger);
+    border-color: rgba(198, 40, 40, 0.2);
+}
+
+
+.container-titulo-panel {
+    background-color: #DCEDC8;
+    /* Tono verde claro suave de la imagen */
+    background: linear-gradient(90deg, #E8F5E9 0%, #D0E7D2 100%);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header-icon-container {
+    background-color: #ffffff;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    color: var(--brand-green);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-subtitle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #558B2F;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.header-main-title {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #1B5E20;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+/* ============================= Barra de pestañas ============================= */
+.container-tabs {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0 24px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.container-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-link-custom {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 18px 14px;
+    border: none;
+    background: none;
+    position: relative;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-link-custom.active {
+    color: var(--brand-green-dark);
+}
+
+.nav-link-custom.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 14px;
+    right: 14px;
+    height: 3px;
+    background-color: var(--brand-green);
+    border-radius: 3px 3px 0 0;
+}
+
+.container-principal {
+    background-color: var(--bg-premium);
+
+}
+
+.vista-oculta {
+    display: none;
+}
+
+.vista-visible {
+    display: block;
+}
+
+/* ============================= Contenedor card ============================= */
+.content-card {
+    background: var(--bg-card);
+    border-radius: 24px;
+    border: 1px solid var(--border-card);
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.02);
+    padding: 32px;
+}
+
+/* ============================= Container registro ============================= */
+.container-registro {
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+/* ============================= FORMULARIOS ============================= */
+.admin-input-group .form-control,
+.admin-input-group .form-select {
+    border-radius: 12px;
+    border: 1px solid #E5E5EA;
+    background-color: #FAFAFC;
+    padding: 11px 14px;
+    font-size: 0.9rem;
+}
+
+.boton-enviar {
+    background-color: var(--brand-green);
+    border: none;
+    border-radius: 12px;
+}
+
+.texto-motivo {
+    font-size: 0.7rem;
+}
+
+.texto-mensaje {
+    max-width: 300px;
+}
+
+.texto-prioridad {
+    max-width: 260px;
+}
+
+.boton-editar {
+    font-size: 0.7rem;
+    background-color: var(--brand-green);
+    border: none;
+    border-radius: 6px;
+}
+
+.boton-exportar-entradas .boton-exportar-salida {
+    border-radius: 8px;
+}
+
+.boton-intervenir {
+    font-size: 0.7rem;
+    border-radius: 6px;
+}
+
+.admin-input-group .form-control:focus,
+.admin-input-group .form-select:focus {
+    background-color: #FFFFFF;
+    border-color: var(--brand-green);
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+/* ============================= TABLAS ============================= */
+.admin-table th {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #8E8E93;
+    border-bottom: 2px solid #E5E5EA;
+    padding: 14px 12px;
+}
+
+.admin-table td {
+    font-size: 0.88rem;
+    vertical-align: middle;
+    color: #3A3A3C;
+    padding: 14px 12px;
+}
+
+/* ============================= BADGES OPERATIVOS ============================= */
+.badge-custom {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.priority-high {
+    background-color: rgba(198, 40, 40, 0.1);
+    color: var(--brand-danger);
+}
+
+.priority-medium {
+    background-color: rgba(239, 108, 0, 0.1);
+    color: var(--brand-orange);
+}
+
+.priority-low {
+    background-color: rgba(21, 101, 192, 0.1);
+    color: var(--brand-info);
+}
+
+.status-success {
+    background-color: rgba(46, 125, 50, 0.1);
+    color: var(--brand-green-dark);
+}
+
+.status-pending {
+    background-color: rgba(239, 108, 0, 0.1);
+    color: var(--brand-orange);
+}
+
+.status-route {
+    background-color: rgba(21, 101, 192, 0.1);
+    color: var(--brand-info);
+}
