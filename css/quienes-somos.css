@@ -1,0 +1,193 @@
+:root {
+    --brand-green: #2E7D32;
+    --brand-green-dark: #1B5E20;
+    --brand-orange: #EF6C00;
+    --brand-teal: #00695C;
+    --text-main: #1C1C1E;
+    --text-muted: #636366;
+    --bg-premium: #F9FBF9;
+    --bg-card: #FFFFFF;
+    --border-card: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f4;
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- CONTENEDOR GLOBAL RESPONSIVO --- */
+.site-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- NAVBAR RESPONSIVO COMPARTIDO --- */
+.app-navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 12px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+}
+
+.navbar-brand-title {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--brand-green);
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.navbar-brand-title:hover {
+    color: var(--brand-green-dark);
+}
+
+.nav-link-navbar {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 16px !important;
+    transition: color 0.2s ease;
+}
+
+.nav-link-navbar:hover {
+    color: var(--brand-green);
+}
+
+/* Botón hamburguesa */
+.custom-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #f4f6f4;
+    border-radius: 10px;
+    padding: 8px 12px;
+    color: var(--text-main);
+    font-size: 1.2rem;
+}
+
+.custom-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(46, 125, 50, 0.25);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: #ffffff;
+        padding: 16px 0 8px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        margin-top: 12px;
+    }
+
+    .nav-link-navbar {
+        padding: 10px 0 !important;
+    }
+}
+
+/* --- SECCIONES Y TARJETAS --- */
+.content-card {
+    background: var(--bg-card);
+    border-radius: 24px;
+    border: 1px solid var(--border-card);
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.02);
+    padding: 40px;
+}
+
+@media (max-width: 768px) {
+    .content-card {
+        padding: 24px;
+        border-radius: 16px;
+    }
+}
+
+.mission-block {
+    background-color: #E8F5E9;
+    border-left: 5px solid var(--brand-green);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.problem-block {
+    background-color: #FFF3E0;
+    border-left: 5px solid var(--brand-orange);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+/* --- COMPONENTES DE VALORES --- */
+.value-box {
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 24px;
+    background-color: #FAFAFC;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.value-box:hover {
+    transform: translateY(-2px);
+    border-color: var(--brand-green);
+}
+
+/* --- TARJETAS DE CO-FUNDADORES --- */
+.dev-card {
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    overflow: hidden;
+    background: #FFFFFF;
+    transition: all 0.2s ease;
+}
+
+.dev-card:hover {
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.avatar-placeholder {
+    width: 90px;
+    height: 90px;
+    background-color: #E5E5EA;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-muted);
+    margin: 0 auto 16px;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* --- CTA CARDS --- */
+.cta-conversion-card {
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    padding: 32px;
+    height: 100%;
+    transition: all 0.2s;
+}
+
+.cta-donante {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F1F8F1 100%);
+    border-top: 4px solid var(--brand-green);
+}
+
+.cta-beneficiario {
+    background: linear-gradient(135deg, #FFFFFF 0%, #E0F2F1 100%);
+    border-top: 4px solid var(--brand-teal);
+}
+
+.active {
+    color: var(--brand-green) !important;
+}
