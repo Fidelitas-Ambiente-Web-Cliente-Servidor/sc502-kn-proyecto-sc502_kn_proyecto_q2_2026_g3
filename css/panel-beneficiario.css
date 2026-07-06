@@ -1,0 +1,536 @@
+:root {
+
+    --brand-green: #2E7D32;
+    --brand-green-dark: #1B5E20;
+    --brand-orange: #EF6C00;
+    --brand-purple: #6A1B9A;
+    --brand-teal: #00695C;
+    --brand-info: #1565C0;
+    --text-main: #1C1C1E;
+    --text-muted: #636366;
+    --bg-premium: #F9FBF9;
+    --bg-card: #FFFFFF;
+    --border-card: rgba(0, 0, 0, 0.08);
+    --bg-hover-light: #F2F2F7;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f4;
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- CONTENEDOR GLOBAL RESPONSIVO --- */
+.site-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- NAVBAR --- */
+.app-navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+}
+
+.navbar-brand-title {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--brand-green);
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.action-icon-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #f4f6f4;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* --- BOTÓN LOGOUT (Copiado del Panel Administrativo) --- */
+.btn-logout-custom {
+    background-color: #FAFAFC;
+    color: #3A3A3C;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 1px solid #E5E5EA;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-logout-custom:hover {
+    background-color: rgba(198, 40, 40, 0.06);
+    color: #C62828;
+    /* --brand-danger original */
+    border-color: rgba(198, 40, 40, 0.2);
+}
+
+/* --- PERFIL ORGANIZACIÓN Y CONTADOR GLOBAL --- */
+.organization-profile-block {
+    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+    border-bottom: 1px solid rgba(46, 125, 50, 0.15);
+    padding: 20px 24px;
+}
+
+.counter-badge-box {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(46, 125, 50, 0.25);
+    border-radius: 12px;
+    padding: 6px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- SUB-NAV / TABS DE NAVEGACIÓN --- */
+.section-tabs {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.section-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-link-custom {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 16px 12px;
+    border: none;
+    background: none;
+    position: relative;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-link-custom.active {
+    color: var(--brand-green);
+}
+
+.nav-link-custom.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    background-color: var(--brand-green);
+    border-radius: 3px 3px 0 0;
+}
+
+/* --- TARJETAS DE CONTENIDO COMÚN --- */
+.content-card {
+    background: var(--bg-card);
+    border-radius: 24px;
+    border: 1px solid var(--border-card);
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.02);
+    padding: 32px;
+}
+
+@media (max-width: 576px) {
+    .content-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+}
+
+/* --- COMPONENTES DE SOLICITUD --- */
+.search-input-group .form-control {
+    border-radius: 12px 0 0 12px;
+    border: 1px solid #E5E5EA;
+    background-color: #FAFAFC;
+}
+
+.search-input-group .btn-search {
+    border-radius: 0 12px 12px 0;
+    background-color: var(--brand-green);
+    color: white;
+    border: 1px solid var(--brand-green);
+}
+
+.request-summary-bar {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(46, 125, 50, 0.2);
+    border-left: 4px solid var(--brand-green);
+    border-radius: 14px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.donation-available-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid var(--border-card);
+    overflow: hidden;
+    transition: all 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.donation-available-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+}
+
+.card-visual-header {
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-visual-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.category-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    color: var(--brand-green-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.card-body-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.donation-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000;
+    font-weight: mb-1;
+}
+
+.donation-donor {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: mb-3;
+}
+
+.logistics-info-mini {
+    font-size: 0.8rem;
+    color: #3A3A3C;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.logistics-info-mini i {
+    color: var(--brand-green);
+}
+
+.btn-request-collect {
+    background: linear-gradient(180deg, #4CAF50 0%, var(--brand-green) 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    margin-top: 16px;
+}
+
+/* --- FORMATO REPLICADO DE LA IMAGEN DE SOLICITUD OPERATIVA --- */
+.donation-list-item-horizontal {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid var(--border-card);
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.donation-number-badge-green {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background-color: var(--brand-green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.donation-content-main-flow {
+    flex-grow: 1;
+}
+
+.item-main-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.item-main-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.badge-count {
+    background-color: #E8F5E9;
+    color: var(--brand-green-dark);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.location-subtext-geo {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.comment-box-logistics-teal {
+    background-color: #FAFAFC;
+    border-left: 4px solid var(--brand-teal);
+    padding: 14px 18px;
+    border-radius: 4px 14px 14px 4px;
+    font-size: 0.9rem;
+    color: #2C3E50;
+    margin-bottom: 16px;
+}
+
+.inner-instruction-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--brand-teal);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.action-buttons-aligned-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-action-outline-secondary {
+    border: 1px solid #C7C7CC;
+    background: #FFFFFF;
+    color: #48484A;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.btn-action-outline-secondary:hover {
+    background: var(--bg-hover-light);
+}
+
+.btn-action-outline-danger {
+    border: 1px solid #FF3B30;
+    background: #FFFFFF;
+    color: #FF3B30;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.btn-action-outline-danger:hover {
+    background: #FFEBEE;
+}
+
+/* --- NUEVA ESTÁTICA REPLICADA DE LA IMAGEN DE HISTORIAL (view-status) --- */
+.history-table th {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #8E8E93;
+    border-bottom: 1px solid #E5E5EA;
+}
+
+.history-table td {
+    font-size: 0.95rem;
+    vertical-align: middle;
+    color: #3A3A3C;
+}
+
+.history-table tr:last-child td {
+    border-bottom: none;
+}
+
+.id-cell {
+    font-weight: 600;
+    color: #8E8E93;
+}
+
+.status-badge-inline {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Estilos de badges replicados de la imagen */
+.status-badge-inline.recolectado {
+    background-color: rgba(46, 125, 50, 0.08);
+    color: var(--brand-green);
+}
+
+.status-badge-inline.vencido {
+    background-color: rgba(106, 27, 154, 0.08);
+    color: var(--brand-purple);
+}
+
+.btn-ver-donado {
+    border: 1px solid var(--brand-info);
+    background: transparent;
+    color: var(--brand-info);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.btn-ver-donado:hover {
+    background-color: rgba(21, 101, 192, 0.05);
+    border-color: #1565C0;
+}
+
+.support-input-group .form-control,
+.support-input-group .form-select {
+    border-radius: 12px;
+    border: 1px solid #E5E5EA;
+    background-color: #FAFAFC;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.support-input-group .form-control:focus,
+.support-input-group .form-select:focus {
+    background-color: #FFFFFF;
+    border-color: var(--brand-green);
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+.support-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+/* Enlaces de Ayuda Rápida / FAQs */
+.quicklink-box {
+    border: 1px solid #E5E5EA;
+    border-radius: 12px;
+    padding: 14px 18px;
+    background-color: #FAFAFC;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.quicklink-box:hover {
+    border-color: var(--brand-green);
+    background-color: #FFFFFF;
+    color: var(--brand-green-dark);
+}
+
+/* Mapa Falso / Integración */
+.map-placeholder-container {
+    height: 220px;
+    background-color: #E5E5EA;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border-card);
+    position: relative;
+}
+
+/* Banners de Estado */
+.system-status-banner {
+    background-color: #E8F5E9;
+    border-left: 4px solid var(--brand-green);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--brand-green-dark);
+}
