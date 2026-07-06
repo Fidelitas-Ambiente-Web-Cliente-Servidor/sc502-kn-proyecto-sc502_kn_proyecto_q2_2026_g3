@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodLink - Panel de Control Administrativo Avanzado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/panel-administrativo.css">
+</head>
+
+<body>
+    <div class="site-container">
+
+        <!--============================= Navbar Principal =============================-->
+        <nav class="app-navbar">
+            <div>
+                <a href="#" class="navbar-brand-title">
+                    <i class="bi bi-app-indicator text-success"></i> FoodLink
+                </a>
+            </div>
+
+            <!--============================= Boton Logout =============================-->
+            <div>
+                <button class="btn btn-logout-custom" onclick="botonLogout()">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span class="d-none d-sm-inline">Cerrar Sesión</span>
+                </button>
+            </div>
+        </nav>
+
+        <!--============================= Panel administrativo titulo =============================-->
+        <header class="container-titulo-panel">
+            <div class="header-icon-container">
+                <i class="bi bi-sliders"></i>
+            </div>
+            <div class="header-text">
+                <span class="header-subtitle">Fundación Operativa</span>
+                <h1 class="header-main-title">Panel Administrativo Central</h1>
+            </div>
+        </header>
+
+        <!--============================= Barra de pestañas =============================-->
+        <div class="container-tabs">
+            <button class="nav-link-custom active" id="tab-usuarios"
+                onclick="cambiarTab('vista-usuarios', 'tab-usuarios')">
+                <i class="bi bi-shield-lock-fill me-2"></i>1. Gestión de Usuarios
+            </button>
+            <button class="nav-link-custom" id="tab-contactos"
+                onclick="cambiarTab('vista-contactos', 'tab-contactos')">
+                <i class="bi bi-envelope-paper-fill me-2"></i>2. Solicitudes de Contacto
+            </button>
+            <button class="nav-link-custom" id="tab-donaciones"
+                onclick="cambiarTab('vista-donaciones', 'tab-donaciones')">
+                <i class="bi bi-heart-pulse-fill me-2"></i>3. Historial de Donaciones
+            </button>
+            <button class="nav-link-custom" id="tab-envios"
+                onclick="cambiarTab('vista-envios', 'tab-envios')">
+                <i class="bi bi-truck me-2"></i>4. Entregas a Beneficiarios
+            </button>
+            <button class="nav-link-custom" id="tab-reportes"
+                onclick="cambiarTab('vista-reportes', 'tab-reportes')">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>5. Reportes e Incidencias
+            </button>
+        </div>
+
+        <!--============================= Contenedor principal =============================-->
+        <main class="p-4 p-md-5 flex-grow-1 container-principal">
+            <div class="content-card">
+
+                <!--============================= Pestaña 1: Gestion de registro =============================-->
+                <div id="vista-usuarios" class="panel-vista">
+                    <div class="row g-4">
+                        <div class="col-12 col-lg-4 border-end-lg container-registro">
+                            <h3 class="h5 fw-bold text-dark mb-1">Registrar Cuenta Interna</h3>
+                            <p class="text-muted small mb-4">Añada empleados de operaciones o nuevos
+                                perfiles de administración root.</p>
+                            <form id="createUserForm" onsubmit="enviarCrearUsuario(event)">
+                                <div class="row g-3">
+                                    <div class="col-12 admin-input-group">
+                                        <label class="form-label small fw-bold mb-1">Nombre
+                                            Completo</label>
+                                        <input type="text" id="newUserName" class="form-control"
+                                            placeholder="Ej: Carlos García Rivas" required>
+                                    </div>
+                                    <div class="col-12 admin-input-group">
+                                        <label class="form-label small fw-bold mb-1">Correo
+                                            Electrónico</label>
+                                        <input type="email" id="newUserEmail" class="form-control"
+                                            placeholder="usuario@foodlink.com" required>
+                                    </div>
+                                    <div class="col-12 admin-input-group">
+                                        <label class="form-label small fw-bold mb-1">Rol
+                                            Operativo</label>
+                                        <select id="newUserRole" class="form-select" required>
+                                            <option value="Staff">Staff / Operaciones</option>
+                                            <option value="Administrador">Administrador Global
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 pt-2">
+                                        <button type="submit"
+                                            class="btn btn-success w-100 py-2.5 fw-semibold boton-enviar">
+                                            <i class="bi bi-plus-circle me-1"></i> Generar
+                                            Credenciales
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <h3 class="h5 fw-bold text-dark mb-3">Personal del Sistema Activo</h3>
+                            <div class="table-responsive">
+                                <table class="table admin-table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Usuario</th>
+                                            <th>Rol</th>
+                                            <th class="text-end">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="usersTableBody">
+                                        <tr>
+                                            <td>
+                                                <span class="fw-bold d-block">Axell García</span>
+                                                <span
+                                                    class="text-muted small">axell.garcia@foodlink.com</span>
+                                            </td>
+                                            <td><span
+                                                    class="badge-custom status-success">Administrador</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <button
+                                                    class="btn btn-outline-secondary btn-sm border-0"
+                                                    onclick="alert('Modificando permisos...')"><i
+                                                        class="bi bi-pencil"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================= Pestaña 2: Solicitud de contacto =============================-->
+                <div id="vista-contactos" class="panel-vista vista-oculta">
+                    <div class="mb-4">
+                        <h3 class="h5 fw-bold text-dark mb-1">Bandeja de Entrada de Contacto</h3>
+                        <p class="text-muted small">Mensajes recibidos de empresas interesadas,
+                            prensa o alianzas corporativas desde el portal institucional.</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table admin-table align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Remitente e Institución</th>
+                                    <th>Motivo / Select</th>
+                                    <th>Mensaje Enviado</th>
+                                    <th>Fecha</th>
+                                    <th class="text-end">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="fw-bold d-block">Marcela Alfaro</span>
+                                        <span
+                                            class="text-muted small">m.alfaro@automercado.cr</span>
+                                    </td>
+                                    <td><span class="badge bg-light text-dark border fw-semibold texto-motivo">Empresa Donante</span></td>
+                                    <td class="small texto-mensaje">"Tenemos excedentes
+                                        de panadería aptos en la sede de San José Centro, queremos
+                                        sincronizar el API..."</td>
+                                    <td class="small text-muted">Ayer, 4:10 PM</td>
+                                    <td class="text-end"><button
+                                            class="btn btn-success btn-sm font-monospace fw-bold px-2 py-1 boton-editar"
+                                            onclick="alert('Abriendo cliente de correo...')"><i
+                                                class="bi bi-reply-fill"></i> Responder</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--============================= Pestaña 3: Historial de donaciones =============================-->
+                <div id="vista-donaciones" class="panel-vista vista-oculta">
+                    <div
+                        class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                        <div>
+                            <h3 class="h5 fw-bold text-dark mb-1">Historial General de Alimentos
+                                Recibidos (Ingresos)</h3>
+                            <p class="text-muted small mb-0">Trazabilidad de las mermas comerciales
+                                y excedentes rescatados que ingresan al inventario de la fundación.
+                            </p>
+                        </div>
+                        <button class="btn btn-outline-success btn-sm fw-medium boton-exportar-entradas"
+                            onclick="alert('Exportando historial de ingresos...')">
+                            <i class="bi bi-file-earmark-excel-fill me-1"></i> Exportar Entradas
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table admin-table align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>ID Donación</th>
+                                    <th>Establecimiento Donante</th>
+                                    <th>Descripción de Carga Salvada</th>
+                                    <th>Fecha de Recolección</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-monospace fw-bold text-success">#DON-047</td>
+                                    <td><span class="fw-semibold">Walmart San Sebastián</span></td>
+                                    <td class="small text-muted">40 kg de frutas y verduras
+                                        seleccionadas (Lote perecedero calificado)</td>
+                                    <td class="small">26 Jun 2026</td>
+                                    <td><span class="badge-custom status-success"><i
+                                                class="bi bi-download me-1"></i>En Almacén</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--============================= Pestaña 4: Entregas de beneficiarios =============================-->
+                <div id="vista-envios" class="panel-vista vista-oculta">
+                    <div
+                        class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                        <div>
+                            <h3 class="h5 fw-bold text-dark mb-1">Control de Distribución y
+                                Despachos (Salidas)</h3>
+                            <p class="text-muted small mb-0">Monitoreo de los recursos asignados y
+                                entregados directamente a las organizaciones y comedores
+                                vulnerables.</p>
+                        </div>
+                        <button class="btn btn-outline-primary btn-sm fw-medium boton-exportar-salida"
+                            onclick="alert('Exportando manifiestos de distribución social...')">
+                            <i class="bi bi-file-earmark-pdf-fill me-1"></i> Exportar Salidas (PDF)
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table admin-table align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Código Despacho</th>
+                                    <th>Organización Receptora</th>
+                                    <th>Alimentos Asignados</th>
+                                    <th>Fecha de Entrega</th>
+                                    <th>Conductor / Ruta</th>
+                                    <th>Estado de Entrega</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-monospace fw-bold text-primary">#OUT-802</td>
+                                    <td><span class="fw-semibold">Comedor Esperanza Cristiana</span>
+                                    </td>
+                                    <td class="small text-muted">40 kg de frutas y verduras frescas
+                                        rescatadas (Excedente Walmart)</td>
+                                    <td class="small">27 Jun 2026</td>
+                                    <td class="small">Carlos García <span class="text-muted">(Ruta
+                                            San José)</span></td>
+                                    <td><span class="badge-custom status-success"><i
+                                                class="bi bi-check2-all me-1"></i>Completado</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--============================= Pestaña 5: Reportes e incidencias =============================-->
+                <div id="vista-reportes" class="panel-vista vista-oculta">
+                    <div class="mb-4">
+                        <h3 class="h5 fw-bold text-dark mb-1">Módulo de Control de Fallas e
+                            Incidentes</h3>
+                        <p class="text-muted small">Tickets de soporte técnico levantados
+                            activamente por repartidores, beneficiarios o donantes.</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table admin-table align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>N° Ticket</th>
+                                    <th>Usuario / Rol</th>
+                                    <th>Categoría del Fallo</th>
+                                    <th>Prioridad</th>
+                                    <th>Descripción Operativa</th>
+                                    <th class="text-end">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-monospace fw-bold">#TK-1024</td>
+                                    <td>
+                                        <span class="fw-semibold d-block">ID-99211</span>
+                                        <span class="text-muted small">Beneficiario</span>
+                                    </td>
+                                    <td><span class="text-danger small fw-medium"><i
+                                                class="bi bi-truck me-1"></i>Problema en
+                                            Logística</span></td>
+                                    <td><span class="badge-custom priority-high">Alta</span></td>
+                                    <td class="small text-muted texto-prioridad">"El
+                                        donante no se presentó en el punto de recolección
+                                        pactado..."</td>
+                                    <td class="text-end"><button
+                                            class="btn btn-outline-danger btn-sm px-2 py-1 font-monospace boton-intervenir"
+                                            onclick="alert('Interviniendo incidente...')">Intervenir</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!--============================= Footer =============================-->
+        <footer class="text-white pt-5 pb-4 px-4 px-md-5">
+            <div class="row g-4 mb-4">
+                <div class="col-12 col-md-6">
+                    <span class="fw-bold text-success fs-5 d-flex align-items-center gap-2 mb-2">
+                        <i class="bi bi-app-indicator"></i> FoodLink
+                    </span>
+                    <p class="text-secondary mb-3 texto-informativo">
+                        Infraestructura tecnológica dedicada al desarrollo de redes de economía
+                        circular, mitigación de mermas y fortalecimiento de la seguridad alimentaria
+                        en Costa Rica.
+                    </p>
+                    <div class="d-flex gap-3 fs-5 text-secondary">
+                        <a href="#" class="text-secondary text-decoration-none"
+                            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-secondary text-decoration-none"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary text-decoration-none"
+                            aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary text-decoration-none"
+                            aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <h4 class="text-white fw-bold mb-3 titulo-footer lista-plataforma">
+                                Plataforma</h4>
+                            <ul class="list-unstyled d-flex flex-column gap-2>
+                                <li><a href="#" class="text-secondary text-decoration-none">Sobre
+                                        Nosotros</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none">Casos de
+                                        Impacto</a></li>
+                                <li><a href="#"
+                                        class="text-secondary text-decoration-none">Cumplimiento
+                                        ODS</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none">Prensa y
+                                        Noticias</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="text-white fw-bold mb-3 titulo-footer">
+                                Ecosistema</h4>
+                            <ul class="list-unstyled d-flex flex-column gap-2 lista-ecosistema">
+                                <li><a href="#"
+                                        class="text-secondary text-decoration-none">Documentación
+                                        API</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none">Centro
+                                        de Ayuda</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none">Canal de
+                                        Soporte</a></li>
+                                <li><a href="#"
+                                        class="text-secondary text-decoration-none">Seguridad e
+                                        Inocuidad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="linea-divisora">
+
+            <div class="mb-4">
+                <div class="d-flex flex-wrap gap-x-3 gap-y-1 text-secondary tramites-legales">
+                    <a href="#" class="text-secondary text-decoration-none me-3">Términos de
+                        Servicio</a>
+                    <a href="#" class="text-secondary text-decoration-none me-3">Política de
+                        Privacidad</a>
+                    <a href="#" class="text-secondary text-decoration-none">Gestión de Cookies</a>
+                </div>
+            </div>
+
+            <div class="pt-3 border-top border-dark d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 text-secondary informacion-adicional">
+                <div>
+                    <span class="d-block">© 2026 Universidad Fidélitas</span>
+                    <span class="text-muted informacion-universidad">Proyecto de Ingeniería
+                        Cliente/Servidor</span>
+                </div>
+                <span class="fw-medium">San José, CR</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/panel-administrativo.js"></script>
+</body>
+
+</html>
