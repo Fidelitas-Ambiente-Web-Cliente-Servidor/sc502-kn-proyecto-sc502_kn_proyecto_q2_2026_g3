@@ -5,28 +5,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FoodLink - Quiénes Somos</title>
-        <!-- Bootstrap 5.3 -->
+        
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
             rel="stylesheet">
-        <!-- Bootstrap Icons -->
+        
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
             rel="stylesheet">
-        <!-- Google Fonts: Inter -->
+        
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="./css/quienes-somos.css">
-        <style>
-    </style>
     </head>
 
     <body>
 
         <div class="site-container">
 
-            <!-- Navbar Principal Responsivo e Integrado -->
+            <!-- navbar principal-->
             <nav class="navbar navbar-expand-lg app-navbar">
                 <div
                     class="container-fluid p-0 d-flex justify-content-between align-items-center">
@@ -36,12 +34,17 @@
                         FoodLink
                     </a>
 
-                    <!-- Botón de Hamburguesa para Móviles -->
-                    
+                    <!-- boton de hamburguesa -->
+                    <button class="navbar-toggler custom-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
 
-                    <!-- Contenedor de Elementos Colapsables -->
+                    <!-- elementos colapsables -->
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <!-- Enlaces de navegación alineados al centro -->
+                        <!-- Enlaces alineados al centro -->
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                             <li class="nav-item">
                                <a class="nav-link nav-link-navbar" href="index.html"
@@ -57,7 +60,7 @@
                             </li>
                         </ul>
 
-                        <!-- Botón Ingresar con Icono alineado a la derecha -->
+                        <!-- boton ingresar icono alineado a la derecha -->
                         <div class="d-grid d-lg-block text-center">
                             <a href="login.html"
                                 class="btn btn-sm btn-success px-4 d-inline-flex align-items-center justify-content-center gap-2"
@@ -70,34 +73,29 @@
                 </div>
             </nav>
 
-            <!-- CUERPO PRINCIPAL -->
-            <main class="p-4 p-md-5 flex-grow-1"
-                style="background-color: var(--bg-premium);">
+            <!-- cuerpo -->
+            <main class="p-4 p-md-5 flex-grow-1 bg-page">
 
-                <!-- ENCABEZADO DE SECCIÓN -->
+                <!-- ENCABEZADO -->
                 <div class="text-center mb-5">
-                    <span class="text-uppercase fw-bold"
-                        style="font-size: 0.75rem; letter-spacing: 1.5px; color: var(--brand-orange);">Identidad
+                    <span class="text-uppercase section-eyebrow text-brand-orange">Identidad
                         y Propósito</span>
-                    <h1 class="display-6 fw-bold mt-1 text-dark"
-                        style="letter-spacing: -1px;">Nuestra
+                    <h1 class="display-6 fw-bold mt-1 text-dark page-title">Nuestra
                         Plataforma</h1>
-                    <p class="text-muted mx-auto"
-                        style="max-width: 600px;">Conozca el motor
+                    <p class="text-muted mx-auto col-lead">Conozca el motor
                         tecnológico, humano y académico detrás de la red de
                         redistribución alimentaria
                         de FoodLink.</p>
                 </div>
 
-                <!-- 1. COMPONENTES DE IDENTIDAD Y PROPÓSITO -->
+                <!-- IDENTIDAD Y PROPÓSITO -->
                 <section class="content-card mb-5">
                     <div class="row g-4 mb-5">
                         <!-- Misión -->
                         <div class="col-12 col-md-6">
                             <div class="mission-block h-100">
                                 <span
-                                    class="badge bg-success mb-2 text-uppercase font-monospace"
-                                    style="font-size: 0.65rem; padding: 5px 10px;">Misión</span>
+                                    class="badge bg-success mb-2 text-uppercase font-monospace badge-label">Misión</span>
                                 <h3 class="h4 fw-bold text-success-dark">¿Por
                                     qué existimos?</h3>
                                 <p class="text-dark small mb-0 mt-2 lh-base">
@@ -112,13 +110,11 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- Visión -->
+                        <!-- vición -->
                         <div class="col-12 col-md-6">
-                            <div class="p-4 rounded-4 h-100"
-                                style="background-color: #F4F6F4; border: 1px solid var(--border-card); padding: 32px !important;">
+                            <div class="vision-block h-100">
                                 <span
-                                    class="badge bg-secondary mb-2 text-uppercase font-monospace"
-                                    style="font-size: 0.65rem; padding: 5px 10px;">Visión</span>
+                                    class="badge bg-secondary mb-2 text-uppercase font-monospace badge-label">Visión</span>
                                 <h3 class="h4 fw-bold text-dark">Proyección a
                                     Futuro</h3>
                                 <p class="text-muted small mb-0 mt-2 lh-base">
@@ -134,7 +130,7 @@
                         </div>
                     </div>
 
-                    <!-- Valores Fundamentales -->
+                    <!-- valores -->
                     <h3
                         class="h5 fw-bold text-dark mb-4 text-center text-md-start"><i
                             class="bi bi-heart-fill text-success me-2"></i>Principios
@@ -191,14 +187,13 @@
                     </div>
                 </section>
 
-                <!-- 2. COMPONENTES SOBRE LA PROBLEMÁTICA (EL POR QUÉ) -->
+                <!-- LA PROBLEMÁTICA -->
                 <section class="content-card mb-5">
                     <div class="row g-4 align-items-center">
                         <div class="col-12 col-lg-6">
                             <div class="problem-block h-100">
                                 <span
-                                    class="text-uppercase fw-bold text-warning"
-                                    style="font-size: 0.7rem; letter-spacing: 1px;">Diagnóstico
+                                    class="text-uppercase fw-bold text-warning section-eyebrow-sm">Diagnóstico
                                     Local</span>
                                 <h3 class="h4 fw-bold text-dark mt-1">El
                                     Problema en San José</h3>
@@ -238,7 +233,7 @@
                                 <p class="text-muted small lh-base mb-0">
                                     <strong>FoodLink</strong> actúa como el
                                     puente digital que elimina
-                                    esta paradoja, transforming la ineficiencia
+                                    esta paradoja, transformando la ineficiencia
                                     logística comercial en
                                     asistencia humanitaria directa estructurada.
                                 </p>
@@ -247,11 +242,10 @@
                     </div>
                 </section>
 
-                <!-- 3. COMPONENTES DE EQUIPO Y RESPALDO INSTITUCIONAL -->
+                <!-- equipo y respaldo institucunal-->
                 <section class="content-card mb-5">
                     <div class="text-center mb-5">
-                        <span class="text-uppercase fw-bold text-success"
-                            style="font-size: 0.7rem; letter-spacing: 1.5px;">Ingeniería
+                        <span class="text-uppercase fw-bold text-success section-eyebrow-sm">Ingeniería
                             con
                             Propósito</span>
                         <h3 class="h4 fw-bold text-dark mt-1">Equipo de
@@ -259,9 +253,9 @@
                         </h3>
                     </div>
 
-                    <!-- Fila de Tarjetas de Desarrolladores -->
+                    <!-- fila de tarjetas de desarrolladores -->
                     <div class="row g-4 mb-5">
-                        <!-- Miembro 1: Axell García -->
+                        <!--  1: Axell García -->
                         <div class="col-12 col-sm-6 col-lg-3">
                             <div
                                 class="dev-card p-4 text-center h-100 d-flex flex-column justify-content-between">
@@ -271,20 +265,18 @@
                                     </div>
                                     <h4 class="h6 fw-bold text-dark mb-1">Axell
                                         García</h4>
-                                    <span class="text-muted d-block mb-3"
-                                        style="font-size: 0.75rem; font-weight: 600;">Líder
+                                    <span class="text-muted d-block mb-3 dev-role">Líder
                                         de proyecto,
                                         Desarrollador Senior
                                     </span>
                                 </div>
                                 <a href="https://github.com" target="_blank"
-                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100"
-                                    style="font-size: 0.75rem;"><i
+                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100 dev-profile-btn"><i
                                         class="bi bi-github me-1"></i> Perfil
                                     Profesional</a>
                             </div>
                         </div>
-                        <!-- Miembro 2: Brandon Díaz -->
+                        <!-- Brandon Díaz -->
                         <div class="col-12 col-sm-6 col-lg-3">
                             <div
                                 class="dev-card p-4 text-center h-100 d-flex flex-column justify-content-between">
@@ -295,20 +287,18 @@
                                     <h4
                                         class="h6 fw-bold text-dark mb-1">Brandon
                                         Díaz</h4>
-                                    <span class="text-muted d-block mb-3"
-                                        style="font-size: 0.75rem; font-weight: 600;">Líder
+                                    <span class="text-muted d-block mb-3 dev-role">Líder
                                         de
                                         Front-End,
                                         Desarrollador Senior</span>
                                 </div>
                                 <a href="https://linkedin.com" target="_blank"
-                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100"
-                                    style="font-size: 0.75rem;"><i
+                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100 dev-profile-btn"><i
                                         class="bi bi-linkedin me-1"></i>
                                     Perfil Profesional</a>
                             </div>
                         </div>
-                        <!-- Miembro 3: Jordan Soto -->
+                        <!-- Jordan Soto -->
                         <div class="col-12 col-sm-6 col-lg-3">
                             <div
                                 class="dev-card p-4 text-center h-100 d-flex flex-column justify-content-between">
@@ -318,19 +308,17 @@
                                     </div>
                                     <h4 class="h6 fw-bold text-dark mb-1">Jordan
                                         Soto</h4>
-                                    <span class="text-muted d-block mb-3"
-                                        style="font-size: 0.75rem; font-weight: 600;">Líder
+                                    <span class="text-muted d-block mb-3 dev-role">Líder
                                         de
                                         Back-End, Desarrollador Senior</span>
                                 </div>
                                 <a href="https://github.com" target="_blank"
-                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100"
-                                    style="font-size: 0.75rem;"><i
+                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100 dev-profile-btn"><i
                                         class="bi bi-github me-1"></i> Perfil
                                     Profesional</a>
                             </div>
                         </div>
-                        <!-- Miembro 4: Jose Alfaro -->
+                        <!-- Jose Alfaro -->
                         <div class="col-12 col-sm-6 col-lg-3">
                             <div
                                 class="dev-card p-4 text-center h-100 d-flex flex-column justify-content-between">
@@ -340,28 +328,24 @@
                                     </div>
                                     <h4 class="h6 fw-bold text-dark mb-1">Jose
                                         Alfaro</h4>
-                                    <span class="text-muted d-block mb-3"
-                                        style="font-size: 0.75rem; font-weight: 600;">Analista
+                                    <span class="text-muted d-block mb-3 dev-role">Analista
                                         de
                                         Software QA, Analista Senior</span>
                                 </div>
                                 <a href="https://linkedin.com" target="_blank"
-                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100"
-                                    style="font-size: 0.75rem;"><i
+                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100 dev-profile-btn"><i
                                         class="bi bi-linkedin me-1"></i>
                                     Perfil Profesional</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Filiación Institucional -->
-                    <div class="p-4 rounded-4 border text-center"
-                        style="background-color: #FAFAFC; border-style: dashed !important;">
+                    
+                    <div class="p-4 rounded-4 border text-center institutional-affiliation">
                         <div
                             class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3">
                             <div
-                                class="bg-dark text-white fw-bold d-flex align-items-center justify-content-center rounded-3 shadow-sm"
-                                style="width: 60px; height: 60px; font-size: 1.4rem; letter-spacing:-1px;">
+                                class="bg-dark text-white fw-bold d-flex align-items-center justify-content-center rounded-3 shadow-sm uf-badge">
                                 UF
                             </div>
                             <div class="text-sm-start">
@@ -381,7 +365,7 @@
                     </div>
                 </section>
 
-                <!-- 4. COMPONENTES DE COOPERACIÓN (CTA) -->
+                <!-- cooperacion-->
                 <section class="mb-2">
                     <div class="row g-4">
                         <!-- Tarjeta de Conversión: Donantes -->
@@ -403,8 +387,7 @@
                                         oficiales de alimentos.</p>
                                 </div>
                                 <button
-                                    class="btn btn-success py-2.5 px-4 w-100 mt-2 fw-semibold"
-                                    style="background-color: var(--brand-green); border:none; border-radius:10px;"
+                                    class="btn btn-cta btn-cta-donante fw-semibold"
                                     onclick="alert('Redirigiendo a Formulario de Registro para Donantes Comerciales.')">
                                     <i
                                         class="bi bi-plus-circle-fill me-2"></i>Registrarse
@@ -413,13 +396,12 @@
                             </div>
                         </div>
 
-                        <!-- Tarjeta de Conversión: Organizaciones Beneficiarias -->
+                        <!-- organizaciones beneficiarias -->
                         <div class="col-12 col-md-6">
                             <div
                                 class="cta-conversion-card cta-beneficiario d-flex flex-column justify-content-between">
                                 <div>
-                                    <div class="text-teal mb-2"
-                                        style="color: var(--brand-teal);"><i
+                                    <div class="text-teal mb-2"><i
                                             class="bi bi-heart-pulse-fill fs-2"></i></div>
                                     <h3 class="h4 fw-bold text-dark">¿Es una
                                         organización benéfica?</h3>
@@ -431,8 +413,7 @@
                                         aptos para consumo.</p>
                                 </div>
                                 <button
-                                    class="btn btn-dark py-2.5 px-4 w-100 mt-2 fw-semibold"
-                                    style="background-color: var(--brand-teal); border:none; border-radius:10px;"
+                                    class="btn btn-cta btn-cta-beneficiario fw-semibold"
                                     onclick="alert('Redirigiendo a Formulario de Solicitud para Organizaciones Beneficiarias.')">
                                     <i
                                         class="bi bi-shield-heart me-2"></i>Solicitar
@@ -446,17 +427,15 @@
 
             </main>
 
-            <!-- Footer Corporativo -->
-            <footer class="text-white pt-5 pb-4 px-4 px-md-5"
-                style="background-color: #111112; border-top: 4px solid var(--brand-green); font-size: 0.8rem;">
+            <!-- foter -->
+            <footer class="text-white pt-5 pb-4 px-4 px-md-5 site-footer">
                 <div class="row g-4 mb-4">
                     <div class="col-12 col-md-6">
                         <span
                             class="fw-bold text-success fs-5 d-flex align-items-center gap-2 mb-2">
                             <i class="bi bi-app-indicator"></i> FoodLink
                         </span>
-                        <p class="text-secondary mb-3"
-                            style="line-height: 1.6; color: #8E8E93 !important;">
+                        <p class="text-secondary mb-3 footer-desc-text">
                             Infraestructura tecnológica dedicada al desarrollo
                             de redes de economía
                             circular, mitigación de mermas y fortalecimiento de
@@ -486,12 +465,10 @@
                     <div class="col-12 col-md-6">
                         <div class="row g-3">
                             <div class="col-6">
-                                <h4 class="text-white fw-bold mb-3"
-                                    style="font-size: 0.75rem; letter-spacing: 0.5px; text-transform: uppercase;">
+                                <h4 class="text-white fw-bold mb-3 footer-heading">
                                     Plataforma</h4>
                                 <ul
-                                    class="list-unstyled d-flex flex-column gap-2"
-                                    style="color: #AEAEB2;">
+                                    class="list-unstyled d-flex flex-column gap-2 footer-link-list">
                                     <li><a href="#"
                                             class="text-secondary text-decoration-none">Sobre
                                             Nosotros</a></li>
@@ -509,12 +486,10 @@
                                 </ul>
                             </div>
                             <div class="col-6">
-                                <h4 class="text-white fw-bold mb-3"
-                                    style="font-size: 0.75rem; letter-spacing: 0.5px; text-transform: uppercase;">
+                                <h4 class="text-white fw-bold mb-3 footer-heading">
                                     Ecosistema</h4>
                                 <ul
-                                    class="list-unstyled d-flex flex-column gap-2"
-                                    style="color: #AEAEB2;">
+                                    class="list-unstyled d-flex flex-column gap-2 footer-link-list">
                                     <li><a href="#"
                                             class="text-secondary text-decoration-none">Documentación
                                             API</a></li>
@@ -535,12 +510,10 @@
                     </div>
                 </div>
 
-                <hr
-                    style="border-color: rgba(255,255,255,0.1); margin: 24px 0;">
+                <hr class="footer-divider">
 
                 <div class="mb-4">
-                    <div class="d-flex flex-wrap gap-x-3 gap-y-1 text-secondary"
-                        style="font-size: 0.7rem;">
+                    <div class="d-flex flex-wrap text-secondary footer-legal-links">
                         <a href="#"
                             class="text-secondary text-decoration-none me-3">Términos
                             de
@@ -556,13 +529,11 @@
                 </div>
 
                 <div
-                    class="pt-3 border-top border-dark d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 text-secondary"
-                    style="font-size: 0.65rem; border-color: rgba(255,255,255,0.05) !important;">
+                    class="pt-3 border-top border-dark d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 text-secondary footer-bottom">
                     <div>
                         <span class="d-block">© 2026 Universidad
                             Fidélitas</span>
-                        <span class="text-muted"
-                            style="font-size: 0.6rem;">Proyecto de Ingeniería
+                        <span class="text-muted footer-subtext">Proyecto de Ingeniería
                             Cliente/Servidor</span>
                     </div>
                     <span class="fw-medium">San José, CR</span>
