@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodLink - Inicio</title>
+        <!-- Bootstrap 5.3 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+            rel="stylesheet">
+        <!-- Google Fonts: Inter -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./css/index.css">
+        <style>
+    </style>
+    </head>
+
+    <body>
+
+        <div class="site-container">
+
+            <!-- Navbar Principal Responsivo e Integrado -->
+            <nav class="navbar navbar-expand-lg app-navbar">
+                <div
+                    class="container-fluid p-0 d-flex justify-content-between align-items-center">
+                    <!-- Marca / Título -->
+                    <a class="navbar-brand-title" href="index.html">
+                        <i class="bi bi-app-indicator text-success"></i>
+                        FoodLink
+                    </a>
+
+                    <!-- Botón de Hamburguesa para Móviles -->
+                    <button class="navbar-toggler custom-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <!-- Contenedor de Elementos Colapsables -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <!-- Enlaces de navegación alineados al centro -->
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-navbar"
+                                    href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-navbar" href="quienes-somos.html">
+                              Quiénes Somos
+                               </a>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-navbar"
+                                    href="#">Contacto</a>
+                            </li>
+                        </ul>
+
+                        <!-- Botón Ingresar con Icono alineado a la derecha -->
+                        <div class="d-grid d-lg-block text-center">
+                            <a href="./login.html"
+                            class="btn btn-sm btn-success px-4 d-inline-flex align-items-center justify-content-center gap-2"
+                            style="border-radius: 12px; font-weight: 600; min-height: 40px; font-size: 0.85rem;">
+                            <i class="bi bi-box-arrow-in-right fs-6"></i>
+                            Ingresar
+                             </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- CUERPO PRINCIPAL -->
+            <main class="p-4 p-md-5 flex-grow-1" style="background-color: var(--bg-premium);">
+
+    <section class="hero-index text-center mb-5">
+        <span class="text-uppercase fw-bold etiqueta-hero">Red solidaria alimentaria</span>
+
+        <h1 class="display-5 fw-bold mt-3 text-dark">
+            Conectamos alimentos con quienes más los necesitan
+        </h1>
+
+        <p class="text-muted mx-auto mt-3 descripcion-hero">
+            FoodLink es una plataforma web que facilita la redistribución de alimentos
+            aptos para consumo, conectando comercios donantes con organizaciones
+            sociales en San José, Costa Rica.
+        </p>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+            <a href="login.html" class="btn btn-success btn-lg px-4 boton-principal">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Ingresar a la plataforma
+            </a>
+
+            <a href="quienes-somos.html" class="btn btn-outline-success btn-lg px-4 boton-secundario">
+                Conocer más
+            </a>
+        </div>
+    </section>
+
+    <section class="content-card mb-5">
+        <div class="text-center mb-4">
+            <span class="text-uppercase fw-bold etiqueta-seccion">Ecosistema FoodLink</span>
+            <h2 class="h3 fw-bold text-dark mt-2">Una solución para cada usuario</h2>
+            <p class="text-muted mx-auto" style="max-width: 650px;">
+                La plataforma permite que donantes, beneficiarios y administradores
+                trabajen de forma organizada dentro de un mismo sistema.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="index-card h-100">
+                    <div class="icono-card text-success">
+                        <i class="bi bi-shop"></i>
+                    </div>
+                    <h3 class="h5 fw-bold text-dark">Donantes</h3>
+                    <p class="text-muted small mb-0">
+                        Comercios, supermercados, restaurantes y hoteles pueden registrar
+                        alimentos disponibles para donar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="index-card h-100">
+                    <div class="icono-card text-warning">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </div>
+                    <h3 class="h5 fw-bold text-dark">Beneficiarios</h3>
+                    <p class="text-muted small mb-0">
+                        Organizaciones sociales pueden consultar y recibir alimentos para
+                        apoyar a poblaciones vulnerables.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="index-card h-100">
+                    <div class="icono-card text-info">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                    <h3 class="h5 fw-bold text-dark">Administración</h3>
+                    <p class="text-muted small mb-0">
+                        El equipo administrativo puede supervisar usuarios, donaciones,
+                        solicitudes y reportes del sistema.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-card mb-5">
+        <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-5">
+                <span class="text-uppercase fw-bold etiqueta-seccion">Proceso</span>
+                <h2 class="h3 fw-bold text-dark mt-2">¿Cómo funciona?</h2>
+                <p class="text-muted small lh-base">
+                    FoodLink organiza el proceso de donación para que los alimentos
+                    lleguen de forma más rápida, segura y transparente a quienes los necesitan.
+                </p>
+            </div>
+
+            <div class="col-12 col-lg-7">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="paso-box">
+                            <span class="numero-paso">1</span>
+                            <div>
+                                <h4 class="h6 fw-bold mb-1">Registro de donación</h4>
+                                <p class="text-muted small mb-0">
+                                    El donante publica los alimentos disponibles dentro del sistema.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="paso-box">
+                            <span class="numero-paso">2</span>
+                            <div>
+                                <h4 class="h6 fw-bold mb-1">Solicitud beneficiaria</h4>
+                                <p class="text-muted small mb-0">
+                                    Las organizaciones revisan las donaciones y solicitan apoyo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="paso-box">
+                            <span class="numero-paso">3</span>
+                            <div>
+                                <h4 class="h6 fw-bold mb-1">Entrega e impacto</h4>
+                                <p class="text-muted small mb-0">
+                                    La donación se gestiona y queda registrada para mantener trazabilidad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+            <!-- Footer Corporativo -->
+            <footer class="text-white pt-5 pb-4 px-4 px-md-5"
+                style="background-color: #111112; border-top: 4px solid var(--brand-green); font-size: 0.8rem;">
+                <div class="row g-4 mb-4">
+                    <div class="col-12 col-md-6">
+                        <span
+                            class="fw-bold text-success fs-5 d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-app-indicator"></i> FoodLink
+                        </span>
+                        <p class="text-secondary mb-3"
+                            style="line-height: 1.6; color: #8E8E93 !important;">
+                            Infraestructura tecnológica dedicada al desarrollo
+                            de redes de economía
+                            circular, mitigación de mermas y fortalecimiento de
+                            la seguridad alimentaria
+                            en Costa Rica.
+                        </p>
+                        <div class="d-flex gap-3 fs-5 text-secondary">
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="LinkedIn"><i
+                                    class="bi bi-linkedin"></i></a>
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="Instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="X (Twitter)"><i
+                                    class="bi bi-twitter-x"></i></a>
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="YouTube"><i
+                                    class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <h4 class="text-white fw-bold mb-3"
+                                    style="font-size: 0.75rem; letter-spacing: 0.5px; text-transform: uppercase;">
+                                    Plataforma</h4>
+                                <ul
+                                    class="list-unstyled d-flex flex-column gap-2"
+                                    style="color: #AEAEB2;">
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Sobre
+                                            Nosotros</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Casos
+                                            de
+                                            Impacto</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Cumplimiento
+                                            ODS</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Prensa
+                                            y
+                                            Noticias</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <h4 class="text-white fw-bold mb-3"
+                                    style="font-size: 0.75rem; letter-spacing: 0.5px; text-transform: uppercase;">
+                                    Ecosistema</h4>
+                                <ul
+                                    class="list-unstyled d-flex flex-column gap-2"
+                                    style="color: #AEAEB2;">
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Documentación
+                                            API</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Centro
+                                            de Ayuda</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Canal
+                                            de
+                                            Soporte</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Seguridad
+                                            e
+                                            Inocuidad</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr
+                    style="border-color: rgba(255,255,255,0.1); margin: 24px 0;">
+
+                <div class="mb-4">
+                    <div class="d-flex flex-wrap gap-x-3 gap-y-1 text-secondary"
+                        style="font-size: 0.7rem;">
+                        <a href="#"
+                            class="text-secondary text-decoration-none me-3">Términos
+                            de
+                            Servicio</a>
+                        <a href="#"
+                            class="text-secondary text-decoration-none me-3">Política
+                            de
+                            Privacidad</a>
+                        <a href="#"
+                            class="text-secondary text-decoration-none">Gestión
+                            de Cookies</a>
+                    </div>
+                </div>
+
+                <div
+                    class="pt-3 border-top border-dark d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 text-secondary"
+                    style="font-size: 0.65rem; border-color: rgba(255,255,255,0.05) !important;">
+                    <div>
+                        <span class="d-block">© 2026 Universidad
+                            Fidélitas</span>
+                        <span class="text-muted"
+                            style="font-size: 0.6rem;">Proyecto de Ingeniería
+                            Cliente/Servidor</span>
+                    </div>
+                    <span class="fw-medium">San José, CR</span>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Bootstrap 5 Bundle JS (Necesario para el menú colapsable) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

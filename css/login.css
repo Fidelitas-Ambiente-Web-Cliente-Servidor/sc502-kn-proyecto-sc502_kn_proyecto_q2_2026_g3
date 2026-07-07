@@ -1,0 +1,89 @@
+:root{
+    --brand-green:#1D8A52;
+    --brand-orange:#F97316;
+    --bg:#F7F8F6;
+    --border:#E5E7EB;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+body{
+    background:var(--bg);
+}
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.login-card{
+    width:100%;
+    max-width:470px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:45px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.login-logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    color:var(--brand-green);
+    text-decoration:none;
+    font-size:2rem;
+    font-weight:800;
+    margin-bottom:30px;
+}
+
+.login-etiqueta{
+    color:var(--brand-orange);
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:.75rem;
+    font-weight:700;
+}
+
+.login-title{
+    margin-top:10px;
+    font-size:2rem;
+    font-weight:800;
+}
+
+.login-description{
+    color:#6B7280;
+    margin-top:10px;
+}
+
+.login-input{
+    border-radius:12px;
+    padding:12px;
+}
+
+.login-input:focus{
+    border-color:var(--brand-green);
+    box-shadow:0 0 0 .2rem rgba(29,138,82,.2);
+}
+
+.mensaje-login{
+    color:#dc3545;
+    font-size:.9rem;
+    text-align:center;
+    min-height:20px;
+}
+
+.volver-link{
+    text-decoration:none;
+    color:var(--brand-green);
+    font-weight:600;
+}
