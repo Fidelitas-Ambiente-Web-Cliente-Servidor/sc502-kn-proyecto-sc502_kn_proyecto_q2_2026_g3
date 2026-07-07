@@ -8,6 +8,13 @@
     --bg-premium: #F9FBF9;
     --bg-card: #FFFFFF;
     --border-card: rgba(0, 0, 0, 0.08);
+
+    /* colores adicionales usados */
+    --bg-soft-gray: #F4F6F4;
+    --bg-off-white: #FAFAFC;
+    --footer-bg: #111112;
+    --footer-text-muted: #8E8E93;
+    --footer-link: #AEAEB2;
 }
 
 body {
@@ -18,7 +25,7 @@ body {
     padding: 0;
 }
 
-/* --- CONTENEDOR GLOBAL RESPONSIVO --- */
+/* --- contenerdor global --- */
 .site-container {
     width: 100%;
     max-width: 1200px;
@@ -30,7 +37,7 @@ body {
     flex-direction: column;
 }
 
-/* --- NAVBAR RESPONSIVO COMPARTIDO --- */
+/* --- navbar compartido --- */
 .app-navbar {
     background-color: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -69,7 +76,7 @@ body {
     color: var(--brand-green);
 }
 
-/* Botón hamburguesa */
+/* hamburguesa */
 .custom-toggler {
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: #f4f6f4;
@@ -96,7 +103,7 @@ body {
     }
 }
 
-/* --- SECCIONES Y TARJETAS --- */
+/* --- tarjetas y seccione --- */
 .content-card {
     background: var(--bg-card);
     border-radius: 24px;
@@ -126,7 +133,15 @@ body {
     padding: 32px;
 }
 
-/* --- COMPONENTES DE VALORES --- */
+/* bloque  Visiion */
+.vision-block {
+    background-color: var(--bg-soft-gray);
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+/* --- componentes de valores--- */
 .value-box {
     border: 1px solid var(--border-card);
     border-radius: 16px;
@@ -140,7 +155,7 @@ body {
     border-color: var(--brand-green);
 }
 
-/* --- TARJETAS DE CO-FUNDADORES --- */
+/* --- coofundadores --- */
 .dev-card {
     border: 1px solid var(--border-card);
     border-radius: 20px;
@@ -169,7 +184,32 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* --- CTA CARDS --- */
+/* puesto debajo del nombre en cada dev-card */
+.dev-role {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* btn de perfil (GitHub/LinkedIn) en cada dev-card */
+.dev-profile-btn {
+    font-size: 0.75rem;
+}
+
+/* Insignia  */
+.uf-badge {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+}
+
+/* filiasion institucional */
+.institutional-affiliation {
+    background-color: var(--bg-off-white);
+    border-style: dashed !important;
+}
+
+/* --- cta cards --- */
 .cta-conversion-card {
     border: 1px solid var(--border-card);
     border-radius: 20px;
@@ -186,6 +226,123 @@ body {
 .cta-beneficiario {
     background: linear-gradient(135deg, #FFFFFF 0%, #E0F2F1 100%);
     border-top: 4px solid var(--brand-teal);
+}
+
+/* btns de las CTA cards*/
+.btn-cta {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.btn-cta-donante {
+    background-color: var(--brand-green);
+}
+
+.btn-cta-donante:hover {
+    background-color: var(--brand-green-dark);
+    color: #FFFFFF;
+}
+
+.btn-cta-beneficiario {
+    background-color: var(--brand-teal);
+}
+
+.btn-cta-beneficiario:hover {
+    background-color: #004D40;
+    color: #FFFFFF;
+}
+
+/* --- texto--- */
+.text-success-dark {
+    color: var(--brand-green-dark);
+}
+
+.text-teal {
+    color: var(--brand-teal);
+}
+
+.text-brand-orange {
+    color: var(--brand-orange);
+}
+
+/* Etiqueta "eyebrow" */
+.section-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.section-eyebrow-sm {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Título principal de la página */
+.page-title {
+    letter-spacing: -1px;
+}
+
+/*  "Misión"/"Visión" */
+.badge-label {
+    font-size: 0.65rem;
+    padding: 5px 10px;
+}
+
+/* --- FOOTER CORPORATIVO --- */
+.site-footer {
+    background-color: var(--footer-bg);
+    border-top: 4px solid var(--brand-green);
+    font-size: 0.8rem;
+}
+
+.footer-desc-text {
+    color: var(--footer-text-muted) !important;
+    line-height: 1.6;
+}
+
+.footer-link-list {
+    color: var(--footer-link);
+}
+
+.footer-heading {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.footer-legal-links {
+    font-size: 0.7rem;
+    gap: 4px 12px;
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 24px 0;
+}
+
+.footer-bottom {
+    font-size: 0.65rem;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.footer-subtext {
+    font-size: 0.6rem;
+}
+
+/* fondo  main*/
+.bg-page {
+    background-color: var(--bg-premium);
+}
+
+/* parrafo introductorio */
+.col-lead {
+    max-width: 600px;
 }
 
 .active {
