@@ -25,7 +25,7 @@
                 </a>
                 <div class="d-flex gap-2">
                     <a href="panel-donante.html" class="nav-link-page active">Panel Donante</a>
-                    <a href="contacto-ayuda.html" class="nav-link-page">Contacto y Ayuda</a>
+                    <a href="panel-ayuda.html" class="nav-link-page">Contacto y Ayuda</a>
                 </div>
             </nav>
 
@@ -39,7 +39,7 @@
                     <i class="bi bi-heart-fill text-danger"></i>
                     <div>
                         <span>Donaciones</span>
-                        <strong>8</strong>
+                        <strong id="totalDonaciones">3</strong>
                     </div>
                 </div>
             </section>
@@ -52,7 +52,7 @@
                         <p>Complete los datos principales del producto que desea donar.</p>
                     </div>
 
-                    <form onsubmit="event.preventDefault(); alert('Donación registrada correctamente.');">
+                    <form id="formDonacion">
                         <div class="row g-3">
                             <div class="col-12 col-md-6">
                                 <label class="form-label" for="producto">Producto</label>
@@ -77,6 +77,9 @@
                                 <label class="form-label" for="comentario">Comentario</label>
                                 <textarea class="form-control" id="comentario" rows="3"
                                     placeholder="Indicaciones importantes para retirar el lote"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <p class="mensaje-exito" id="mensajeDonacion"></p>
                             </div>
                             <div class="col-12 text-end">
                                 <button type="submit" class="btn btn-donor">
@@ -103,7 +106,7 @@
                                     <th>Acción</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tablaDonaciones">
                                 <tr>
                                     <td>Pan integral</td>
                                     <td>15 bolsas</td>
@@ -128,6 +131,7 @@
                 </section>
             </main>
         </div>
+        <script src="./js/panel-donante.js"></script>
     </body>
 
 </html>

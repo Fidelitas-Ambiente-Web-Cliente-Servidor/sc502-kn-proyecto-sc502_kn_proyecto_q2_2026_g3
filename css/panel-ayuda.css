@@ -190,6 +190,18 @@ body {
     color: var(--text-muted);
 }
 
+.mensaje-exito {
+    margin: 0;
+    color: var(--brand-green);
+    font-weight: 700;
+}
+
+.mensaje-error {
+    margin: 0;
+    color: #b00020;
+    font-weight: 700;
+}
+
 @media (max-width: 768px) {
     .app-navbar {
         flex-direction: column;

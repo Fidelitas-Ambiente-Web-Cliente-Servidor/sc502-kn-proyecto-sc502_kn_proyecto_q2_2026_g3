@@ -14,7 +14,7 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="./css/contacto-ayuda.css">
+        <link rel="stylesheet" href="./css/panel-ayuda.css">
     </head>
 
     <body>
@@ -25,7 +25,7 @@
                 </a>
                 <div class="d-flex gap-2">
                     <a href="panel-donante.html" class="nav-link-page">Panel Donante</a>
-                    <a href="contacto-ayuda.html" class="nav-link-page active">Contacto y Ayuda</a>
+                    <a href="panel-ayuda.html" class="nav-link-page active">Contacto y Ayuda</a>
                 </div>
             </nav>
 
@@ -43,7 +43,7 @@
                         <p>Complete la información y el equipo de FoodLink revisará el caso.</p>
                     </div>
 
-                    <form onsubmit="event.preventDefault(); alert('Mensaje enviado correctamente.');">
+                    <form id="formAyuda">
                         <div class="row g-3">
                             <div class="col-12 col-md-6">
                                 <label class="form-label" for="nombre">Nombre completo</label>
@@ -74,6 +74,9 @@
                                 <label class="form-label" for="mensaje">Mensaje</label>
                                 <textarea class="form-control" id="mensaje" rows="5"
                                     placeholder="Explique su consulta o problema" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <p class="mensaje-exito" id="mensajeAyuda"></p>
                             </div>
                             <div class="col-12 text-end">
                                 <button type="submit" class="btn btn-help">
@@ -134,6 +137,7 @@
                 </section>
             </main>
         </div>
+        <script src="./js/panel-ayuda.js"></script>
     </body>
 
 </html>
