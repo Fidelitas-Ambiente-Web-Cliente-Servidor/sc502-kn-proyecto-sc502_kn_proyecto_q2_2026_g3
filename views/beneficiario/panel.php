@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodLink - Panel de Beneficiario</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="css/panel-beneficiario.css">
+    </head>
+
+    <body>
+
+        <div class="site-container">
+
+            <nav class="app-navbar">
+                <a href="#" class="navbar-brand-title">
+                    <i class="bi bi-app-indicator text-success"></i> FoodLink
+                </a>
+                <div class="d-flex gap-3 align-items-center">
+                    <a href="index.php?controller=ayuda&action=panel" class="nav-link-page">Contacto y Ayuda</a>
+                    <a href="index.php?controller=login&action=logout" class="btn btn-logout-custom">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span class="d-none d-sm-inline">Cerrar Sesión</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div
+                class="organization-profile-block d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
+                <div class="d-flex align-items-center gap-3">
+                    <div
+                        class="org-icon-circle bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm">
+                        <i class="bi bi-house-heart text-success fs-4"></i>
+                    </div>
+                    <div>
+                        <span class="org-label-uppercase text-uppercase text-muted d-block">Organización
+                            Beneficiaria</span>
+                        <h2 class="org-title h6 fw-bold mb-0 text-dark"><?= htmlspecialchars($_SESSION['usuario']['nombre']) ?></h2>
+                    </div>
+                </div>
+                <div>
+                    <div class="counter-badge-box shadow-sm">
+                        <i class="bi bi-box-seam-fill text-success"></i>
+                        <div class="text-end">
+                            <span class="counter-label d-block text-muted lh-1">Donaciones
+                                Recibidas</span>
+                            <span class="counter-value fw-bold text-dark"
+                                id="received-counter-display">112</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-tabs d-flex gap-2 overflow-auto">
+                <button class="nav-link-custom active" id="tab-explore"
+                    onclick="switchView('view-explore', 'tab-explore')">Explorar
+                    Disponibles</button>
+                <button class="nav-link-custom" id="tab-requests"
+                    onclick="switchView('view-requests', 'tab-requests')">Mis
+                    Solicitudes</button>
+                <button class="nav-link-custom" id="tab-status"
+                    onclick="switchView('view-status', 'tab-status')">Estado de
+                    Seguimiento</button>
+                <button class="nav-link-custom" id="tab-support"
+                    onclick="switchView('view-support', 'tab-support')">
+                    <i class="bi bi-cpu-fill me-2"></i>Soporte Técnico Operativo
+                </button>
+            </div>
+
+            <main class="p-4 p-md-5 flex-grow-1"
+                style="background-color: var(--bg-premium);">
+
+                <!-- explore -->
+                <div id="view-explore" class="beneficiary-view">
+                    <div class="content-card mb-3 p-3 shadow-sm border-0">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-8">
+                                <div class="input-group search-input-group">
+                                    <input type="text" class="form-control"
+                                        placeholder="Buscar por nombre de producto (ej: Manzanas)...">
+                                    <button class="btn btn-search px-4"
+                                        type="button"><i
+                                            class="bi bi-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="request-summary-bar mb-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="action-icon-btn action-icon-btn-soft-green text-success"><i
+                                    class="bi bi-cart-check"></i></div>
+                            <div>
+                                <span
+                                    class="d-block text-muted small fw-medium lh-1">Donaciones
+                                    disponibles</span>
+                                <span class="request-summary-text fw-bold text-dark"><span
+                                        id="items-to-request-count"><?= count($disponibles) ?></span>
+                                    lotes listos para solicitar</span>
+                            </div>
+                        </div>
+                        <button class="btn-confirm-request btn btn-success font-semibold px-4 py-2"
+                            onclick="alert('Módulo de solicitudes en construcción — falta la tabla de solicitudes en la base de datos.')">Confirmar
+                            Solicitud</button>
+                    </div>
+                    <div class="row g-4">
+                        <?php if (empty($disponibles)): ?>
+                            <div class="col-12">
+                                <p class="text-muted text-center">No hay donaciones disponibles por el momento.</p>
+                            </div>
+                        <?php else: ?>
+                            <?php foreach ($disponibles as $don): ?>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="donation-available-card shadow-sm">
+                                        <div class="card-visual-header"
+                                            style="background-image: url('https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&q=80&w=300');">
+                                            <span class="category-badge">Disponible</span>
+                                        </div>
+                                        <div class="card-body-content">
+                                            <div>
+                                                <h3 class="donation-title fw-bold mb-1"><?= htmlspecialchars($don['producto']) ?></h3>
+                                                <p class="donation-donor mb-3">Donado por: <?= htmlspecialchars($don['donante_nombre'] ?? 'Anónimo') ?></p>
+                                                <div class="logistics-info-mini"><i
+                                                        class="bi bi-box-seam"></i><span>Cantidad:
+                                                        <span class="fw-semibold"><?= htmlspecialchars($don['cantidad']) ?></span></span></div>
+                                                <div class="logistics-info-mini"><i
+                                                        class="bi bi-geo-alt"></i><span>Ubicación:
+                                                        <?= htmlspecialchars($don['ubicacion']) ?></span></div>
+                                            </div>
+                                            <button class="btn-request-collect" type="button"
+                                                onclick="alert('Módulo de solicitudes en construcción.')">Agregar
+                                                a la solicitud</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+
+                <!-- requests -->
+                <div id="view-requests" class="beneficiary-view"
+                    style="display: none;">
+                    <div class="content-card">
+                        <div class="text-center mb-5">
+                            <span class="section-label-green text-uppercase fw-bold text-muted">Control
+                                Operativo</span>
+                            <h1 class="section-title h3 fw-bold mt-1">Mis solicitudes
+                                de donaciones</h1>
+                            <p class="text-muted small">Cargamentos de
+                                beneficios solicitados en ruta
+                                institucional.</p>
+                        </div>
+                        <div class="d-flex flex-column w-100">
+                            <div
+                                class="donation-list-item-horizontal shadow-sm">
+                                <div class="donation-number-badge-green">1</div>
+                                <div class="donation-content-main-flow">
+                                    <div class="item-main-header-flex">
+                                        <h3 class="item-main-title">Beneficio:
+                                            2026-06-26</h3>
+                                        <span class="badge-count">2
+                                            Artículos</span>
+                                    </div>
+                                    <p class="location-subtext-geo"><i
+                                            class="bi bi-geo-alt-fill text-danger me-1"></i>Sede
+                                        de Distribución Walmart, San José
+                                        Centro</p>
+                                    <div
+                                        class="comment-box-logistics-teal shadow-sm">
+                                        <div class="inner-instruction-tag"><i
+                                                class="bi bi-chat-left-text-fill"></i>
+                                            Instrucciones de Recepción:</div>
+                                        "Cargamento #112A - Presentar la personería jurídica. Ingreso por rampa #4. Los perecederos requieren cajas térmicas propias."
+                                    </div>
+                                    <div class="action-buttons-aligned-right">
+                                        <button
+                                            class="btn-action-outline-secondary"
+                                            onclick="switchView('view-status', 'tab-status')"><i
+                                                class="bi bi-eye"></i>
+                                            Ver</button>
+                                        <button
+                                            class="btn-action-outline-danger"
+                                            onclick="alert('Solicitud cancelada')"><i
+                                                class="bi bi-trash"></i>
+                                            Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View: Status -->
+                <div id="view-status" class="beneficiary-view"
+                    style="display: none;">
+                    <div class="content-card">
+                        <div class="text-center mb-5">
+                            <span class="section-label-green text-uppercase fw-bold">Auditoría
+                                y Trazabilidad</span>
+                            <h1 class="section-title h3 fw-bold mt-1 text-dark">Historial de
+                                Beneficios</h1>
+                            <p class="text-muted small">Registro completo e
+                                histórico de beneficios adquiridos.</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table history-table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th class="th-id-col">ID</th>
+                                        <th>Fecha</th>
+                                        <th>Ubicación (Google Maps)</th>
+                                        <th>Estado</th>
+                                        <th class="text-center">Artículos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View: Support -->
+                <div id="view-support" class="beneficiary-view"
+                    style="display: none;">
+                    <div class="content-card">
+                        <div
+                            class="system-status-banner mb-5 d-flex align-items-center justify-content-between shadow-sm">
+                            <div class="d-flex align-items-center gap-2">
+                                <i
+                                    class="bi bi-check-circle-fill text-success fs-5"></i>
+                                <span>Estado del Servidor: Todos los
+                                    sistemas operan normalmente.</span>
+                            </div>
+                            <span class="badge-online badge bg-success text-uppercase">En
+                                línea</span>
+                        </div>
+
+                        <div class="row g-5">
+                            <div class="col-12 col-lg-7 support-form-divider">
+                                <h2 class="h4 fw-bold text-dark mb-1"><i
+                                        class="bi bi-ticket-perforated-fill text-success me-2"></i>Crear
+                                    Ticket de Incidencia</h2>
+                                <p class="text-muted small mb-4">Exclusivo
+                                    para usuarios con credenciales activas
+                                    experimentando fallas operativas
+                                    inmediatas.</p>
+
+                                <form id="techSupportForm"
+                                    onsubmit="handleSupportSubmit(event)">
+                                    <div class="row g-3">
+                                        <div
+                                            class="col-12 support-input-group">
+                                            <label class="support-label">ID
+                                                de la Donación / Pedido
+                                                <span
+                                                    class="text-muted fw-normal">(Opcional)</span></label>
+                                            <input type="text"
+                                                class="form-control"
+                                                placeholder="Ej: #47">
+                                        </div>
+                                        <div
+                                            class="col-12 support-input-group">
+                                            <label
+                                                class="support-label">Categoría
+                                                del Problema *</label>
+                                            <select class="form-select"
+                                                required>
+                                                <option value disabled
+                                                    selected>Seleccione el
+                                                    fallo
+                                                    correspondiente...</option>
+                                                <option value="bug">Error en
+                                                    la plataforma
+                                                    (Bug)</option>
+                                                <option
+                                                    value="login">Problema
+                                                    con el inicio de sesión
+                                                    / Contraseña</option>
+                                                <option
+                                                    value="logistica">Inconveniente
+                                                    en la
+                                                    recolección/entrega de
+                                                    alimentos</option>
+                                                <option
+                                                    value="publicar">Error
+                                                    al publicar una
+                                                    donación</option>
+                                                <option value="otro">Otro
+                                                    problema
+                                                    técnico</option>
+                                            </select>
+                                        </div>
+                                        <div
+                                            class="col-12 support-input-group">
+                                            <label
+                                                class="support-label">Nivel
+                                                de Prioridad Operativa
+                                                *</label>
+                                            <select class="form-select"
+                                                required>
+                                                <option value="baja">Baja
+                                                    (Consultas menores de
+                                                    interfaz)</option>
+                                                <option value="media"
+                                                    selected>Media
+                                                    (Inconvenientes de flujo
+                                                    no crítico)</option>
+                                                <option value="alta">Alta
+                                                    (Alimentos en riesgo de
+                                                    pérdida)</option>
+                                            </select>
+                                        </div>
+                                        <div
+                                            class="col-12 support-input-group">
+                                            <label
+                                                class="support-label">Captura
+                                                de Pantalla <span
+                                                    class="text-muted fw-normal">(PNG,
+                                                    JPG, PDF)</span></label>
+                                            <input type="file"
+                                                class="form-control"
+                                                accept=".png, .jpg, .jpeg, .pdf">
+                                        </div>
+                                        <div
+                                            class="col-12 support-input-group">
+                                            <label
+                                                class="support-label">Descripción
+                                                Detallada *</label>
+                                            <textarea class="form-control"
+                                                rows="4"
+                                                placeholder="Explique paso a paso..."
+                                                required></textarea>
+                                        </div>
+                                        <div class="col-12 pt-2">
+                                            <button type="submit"
+                                                class="btn btn-success w-100">Enviar
+                                                Ticket</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+            <!-- Footer Corporativo -->
+            <footer class="site-footer text-white pt-5 pb-4 px-4 px-md-5">
+                <div class="row g-4 mb-4">
+                    <div class="col-12 col-md-6">
+                        <span
+                            class="fw-bold text-success fs-5 d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-app-indicator"></i> FoodLink
+                        </span>
+                        <p class="footer-desc-text text-secondary mb-3">
+                            Infraestructura tecnológica dedicada al
+                            desarrollo de redes de economía
+                            circular, mitigación de mermas y fortalecimiento
+                            de la seguridad alimentaria
+                            en Costa Rica.
+                        </p>
+                        <div class="d-flex gap-3 fs-5 text-secondary">
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="LinkedIn"><i
+                                    class="bi bi-linkedin"></i></a>
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="Instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="X (Twitter)"><i
+                                    class="bi bi-twitter-x"></i></a>
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="YouTube"><i
+                                    class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <h4 class="footer-heading text-white fw-bold mb-3">
+                                    Plataforma</h4>
+                                <ul
+                                    class="list-unstyled d-flex flex-column gap-2 footer-link-list">
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Sobre
+                                            Nosotros</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Casos
+                                            de
+                                            Impacto</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Cumplimiento
+                                            ODS</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Prensa
+                                            y
+                                            Noticias</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <h4 class="footer-heading text-white fw-bold mb-3">
+                                    Ecosistema</h4>
+                                <ul
+                                    class="list-unstyled d-flex flex-column gap-2 footer-link-list">
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Documentación
+                                            API</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Centro
+                                            de Ayuda</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Canal
+                                            de
+                                            Soporte</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Seguridad
+                                            e
+                                            Inocuidad</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="footer-divider">
+
+                <div class="mb-4">
+                    <div
+                        class="footer-legal-links d-flex flex-wrap gap-x-3 gap-y-1 text-secondary">
+                        <a href="#"
+                            class="text-secondary text-decoration-none me-3">Términos
+                            de
+                            Servicio</a>
+                        <a href="#"
+                            class="text-secondary text-decoration-none me-3">Política
+                            de
+                            Privacidad</a>
+                        <a href="#"
+                            class="text-secondary text-decoration-none">Gestión
+                            de Cookies</a>
+                    </div>
+                </div>
+
+                <div
+                    class="footer-bottom pt-3 border-top border-dark d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 text-secondary">
+                    <div>
+                        <span class="d-block">© 2026 Universidad
+                            Fidélitas</span>
+                        <span class="footer-subtext text-muted">Proyecto de
+                            Ingeniería
+                            Cliente/Servidor</span>
+                    </div>
+                    <span class="fw-medium">San José, CR</span>
+                </div>
+            </footer>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/panel-beneficiario.js"></script>
+    </body>
+</html>
+
