@@ -22,3 +22,11 @@ CREATE TABLE IF NOT EXISTS mensajes_ayuda (
     mensaje TEXT NOT NULL,
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO donaciones (producto, cantidad, fecha_vencimiento, ubicacion, comentario, estado) VALUES
+('Pan integral', '15 bolsas', '2026-08-20', 'Supermercado La Esperanza', 'Retirar antes de las 5:00 p.m.', 'Disponible'),
+('Frijoles', '30 kg', '2026-09-01', 'Supermercado La Esperanza', 'Producto empacado y listo para retirar.', 'Pendiente'),
+('Verduras mixtas', '12 cajas', '2026-08-15', 'Supermercado La Esperanza', 'Mantener refrigerado.', 'Asignada');
+
+INSERT INTO mensajes_ayuda (nombre, correo, telefono, motivo, mensaje) VALUES
+('Marcela Alfaro', 'm.alfaro@foodlink.com', '8888-8888', 'Consulta general', 'Deseo coordinar una donación para esta semana.');
