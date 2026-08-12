@@ -6,6 +6,7 @@ formAyuda.addEventListener("submit", function (event) {
 
     const nombre = document.getElementById("nombre").value.trim();
     const correo = document.getElementById("correo").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
     const motivo = document.getElementById("motivo").value;
     const mensaje = document.getElementById("mensaje").value.trim();
 
@@ -15,7 +16,28 @@ formAyuda.addEventListener("submit", function (event) {
         return;
     }
 
-    mensajeAyuda.textContent = "Mensaje enviado correctamente. El equipo de soporte lo revisará pronto.";
-    mensajeAyuda.className = "mensaje-exito";
-    formAyuda.reset();
+    const datos = new FormData();
+    datos.append("nombre", nombre);
+    datos.append("correo", correo);
+    datos.append("telefono", telefono);
+    datos.append("motivo", motivo);
+    datos.append("mensaje", mensaje);
+
+    fetch("guardar_mensaje.php", {
+        method: "POST",
+        body: datos,
+    })
+        .then(response => response.json())
+        .then(data => {
+            mensajeAyuda.textContent = data.mensaje;
+            mensajeAyuda.className = data.ok ? "mensaje-exito" : "mensaje-error";
+
+            if (data.ok) {
+                formAyuda.reset();
+            }
+        })
+        .catch(() => {
+            mensajeAyuda.textContent = "No se pudo conectar con el servidor.";
+            mensajeAyuda.className = "mensaje-error";
+        });
 });

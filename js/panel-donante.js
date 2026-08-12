@@ -3,6 +3,63 @@ const tablaDonaciones = document.getElementById("tablaDonaciones");
 const totalDonaciones = document.getElementById("totalDonaciones");
 const mensajeDonacion = document.getElementById("mensajeDonacion");
 
+function limpiarTexto(texto) {
+    const div = document.createElement("div");
+    div.textContent = texto;
+    return div.innerHTML;
+}
+
+function claseEstado(estado) {
+    if (estado === "Pendiente") {
+        return "text-bg-warning";
+    }
+
+    if (estado === "Asignada") {
+        return "text-bg-primary";
+    }
+
+    return "text-bg-success";
+}
+
+function agregarFilaDonacion(donacion) {
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+        <td>${limpiarTexto(donacion.producto)}</td>
+        <td>${limpiarTexto(donacion.cantidad)}</td>
+        <td><span class="badge ${claseEstado(donacion.estado)}">${limpiarTexto(donacion.estado)}</span></td>
+        <td><button class="btn btn-sm btn-outline-secondary" type="button">Ver</button></td>
+    `;
+
+    tablaDonaciones.append(fila);
+    totalDonaciones.textContent = tablaDonaciones.rows.length;
+}
+
+function cargarDonaciones() {
+    fetch("listar_donaciones.php")
+        .then(response => response.json())
+        .then(data => {
+            if (!data.ok) {
+                return;
+            }
+
+            tablaDonaciones.innerHTML = "";
+
+            data.donaciones.forEach(donacion => {
+                agregarFilaDonacion(donacion);
+            });
+
+            if (data.donaciones.length === 0) {
+                tablaDonaciones.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="text-center text-muted">No hay donaciones registradas.</td>
+                    </tr>
+                `;
+            }
+
+            totalDonaciones.textContent = data.donaciones.length;
+        });
+}
+
 formDonacion.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -10,6 +67,7 @@ formDonacion.addEventListener("submit", function (event) {
     const cantidad = document.getElementById("cantidad").value.trim();
     const fecha = document.getElementById("fecha").value;
     const ubicacion = document.getElementById("ubicacion").value.trim();
+    const comentario = document.getElementById("comentario").value.trim();
 
     if (producto === "" || cantidad === "" || fecha === "" || ubicacion === "") {
         mensajeDonacion.textContent = "Debe completar los campos obligatorios.";
@@ -17,17 +75,34 @@ formDonacion.addEventListener("submit", function (event) {
         return;
     }
 
-    const fila = document.createElement("tr");
-    fila.innerHTML = `
-        <td>${producto}</td>
-        <td>${cantidad}</td>
-        <td><span class="badge text-bg-success">Disponible</span></td>
-        <td><button class="btn btn-sm btn-outline-secondary" type="button">Ver</button></td>
-    `;
+    const datos = new FormData();
+    datos.append("producto", producto);
+    datos.append("cantidad", cantidad);
+    datos.append("fecha", fecha);
+    datos.append("ubicacion", ubicacion);
+    datos.append("comentario", comentario);
 
-    tablaDonaciones.prepend(fila);
-    totalDonaciones.textContent = tablaDonaciones.rows.length;
-    mensajeDonacion.textContent = "Donación registrada correctamente.";
-    mensajeDonacion.className = "mensaje-exito";
-    formDonacion.reset();
+    fetch("guardar_donacion.php", {
+        method: "POST",
+        body: datos,
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.ok) {
+                mensajeDonacion.textContent = data.mensaje;
+                mensajeDonacion.className = "mensaje-error";
+                return;
+            }
+
+            cargarDonaciones();
+            mensajeDonacion.textContent = data.mensaje;
+            mensajeDonacion.className = "mensaje-exito";
+            formDonacion.reset();
+        })
+        .catch(() => {
+            mensajeDonacion.textContent = "No se pudo conectar con el servidor.";
+            mensajeDonacion.className = "mensaje-error";
+        });
 });
+
+cargarDonaciones();
