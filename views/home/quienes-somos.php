@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodLink - Quiénes Somos</title>
+        
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+            rel="stylesheet">
+        
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="css/quienes-somos.css">
+    </head>
+
+    <body>
+
+        <div class="site-container">
+
+            <!-- navbar principal-->
+            <nav class="navbar navbar-expand-lg app-navbar">
+                <div
+                    class="container-fluid p-0 d-flex justify-content-between align-items-center">
+                    <!-- Marca / Título -->
+                    <a class="navbar-brand-title" href="#">
+                        <i class="bi bi-app-indicator text-success"></i>
+                        FoodLink
+                    </a>
+
+                    <!-- boton de hamburguesa -->
+                    <button class="navbar-toggler custom-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <!-- elementos colapsables -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <!-- Enlases al centro -->
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+                            <li class="nav-item">
+                               <a class="nav-link nav-link-navbar" href="index.php?controller=home&action=index"
+                               >Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-navbar active"
+                                    href="#">Quiénes Somos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-navbar"
+                                    href="#">Contacto</a>
+                            </li>
+                        </ul>
+
+                        <!-- boton ingresar iconoalineado a la derecha -->
+                        <div class="d-grid d-lg-block text-center">
+                            <a href="index.php?controller=login&action=index"
+                                class="btn btn-sm btn-success px-4 d-inline-flex align-items-center justify-content-center gap-2"
+                                style="border-radius: 12px; font-weight: 600; min-height: 40px; font-size: 0.85rem;">
+                                <i class="bi bi-box-arrow-in-right fs-6"></i>
+                                Ingresar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- cuerpo -->
+            <main class="p-4 p-md-5 flex-grow-1 bg-page">
+
+                <!-- ENCABEZADO -->
+                <div class="text-center mb-5">
+                    <span class="text-uppercase section-eyebrow text-brand-orange">Identidad
+                        y Propósito</span>
+                    <h1 class="display-6 fw-bold mt-1 text-dark page-title">Nuestra
+                        Plataforma</h1>
+                    <p class="text-muted mx-auto col-lead">Conozca el motor
+                        tecnológico, humano y académico detrás de la red de
+                        redistribución alimentaria
+                        de FoodLink.</p>
+                </div>
+
+                <!-- IDENTIDAD Y PROPÓSITO -->
+                <section class="content-card mb-5">
+                    <div class="row g-4 mb-5">
+                        <!-- Misión -->
+                        <div class="col-12 col-md-6">
+                            <div class="mission-block h-100">
+                                <span
+                                    class="badge bg-success mb-2 text-uppercase font-monospace badge-label">Misión</span>
+                                <h3 class="h4 fw-bold text-success-dark">¿Por
+                                    qué existimos?</h3>
+                                <p class="text-dark small mb-0 mt-2 lh-base">
+                                    Reducir el desperdicio de alimentos a gran
+                                    escala en San José
+                                    mediante la tecnología, conectando
+                                    eficientemente los excedentes de
+                                    los establecimientos comerciales con las
+                                    organizaciones sociales que
+                                    ayudan de forma directa a poblaciones
+                                    vulnerables.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- vición -->
+                        <div class="col-12 col-md-6">
+                            <div class="vision-block h-100">
+                                <span
+                                    class="badge bg-secondary mb-2 text-uppercase font-monospace badge-label">Visión</span>
+                                <h3 class="h4 fw-bold text-dark">Proyección a
+                                    Futuro</h3>
+                                <p class="text-muted small mb-0 mt-2 lh-base">
+                                    Convertirse en la plataforma web líder de
+                                    redistribución alimentaria
+                                    en Costa Rica, consolidando un ecosistema
+                                    logístico transparente y
+                                    replicable que transforme los excedentes
+                                    comerciales en un recurso
+                                    de impacto social inmediato.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- valores -->
+                    <h3
+                        class="h5 fw-bold text-dark mb-4 text-center text-md-start"><i
+                            class="bi bi-heart-fill text-success me-2"></i>Principios
+                        y Valores</h3>
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="value-box h-100">
+                                <div class="text-success mb-2"><i
+                                        class="bi bi-people-fill fs-4"></i>
+                                </div>
+                                <h4 class="h6 fw-bold">Solidaridad</h4>
+                                <p class="text-muted small mb-0">Priorizar el
+                                    bienestar colectivo
+                                    uniendo esfuerzos para alimentar a quienes
+                                    más lo necesitan.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="value-box h-100">
+                                <div class="text-warning mb-2"><i
+                                        class="bi bi-globe-americas fs-4"></i>
+                                </div>
+                                <h4 class="h6 fw-bold">Sostenibilidad</h4>
+                                <p class="text-muted small mb-0">Mitigar la
+                                    huella de carbono y el
+                                    impacto ambiental derivado de la destrucción
+                                    de residuos orgánicos.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="value-box h-100">
+                                <div class="text-info mb-2"><i
+                                        class="bi bi-eye-fill fs-4"></i></div>
+                                <h4 class="h6 fw-bold">Transparencia</h4>
+                                <p class="text-muted small mb-0">Garantizar la
+                                    trazabilidad completa del
+                                    alimento, desde el local donante hasta la
+                                    mesa receptora.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="value-box h-100">
+                                <div class="text-danger mb-2"><i
+                                        class="bi bi-cpu-fill fs-4"></i></div>
+                                <h4 class="h6 fw-bold">Innovación</h4>
+                                <p class="text-muted small mb-0">Implementar
+                                    sistemas web inteligentes y
+                                    ágiles para optimizar la logística de
+                                    recolección en tiempo real.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- LA PROBLEMÁTICA -->
+                <section class="content-card mb-5">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-12 col-lg-6">
+                            <div class="problem-block h-100">
+                                <span
+                                    class="text-uppercase fw-bold text-warning section-eyebrow-sm">Diagnóstico
+                                    Local</span>
+                                <h3 class="h4 fw-bold text-dark mt-1">El
+                                    Problema en San José</h3>
+                                <p class="text-dark small mb-0 mt-3 lh-base">
+                                    Diariamente, supermercados, hoteles y
+                                    cadenas de restaurantes en la
+                                    provincia de San José descartan toneladas de
+                                    alimentos perfectamente
+                                    aptos para el consumo humano. Esta merma
+                                    ocurre debido a estrictos
+                                    estándares estéticos, sobreproducción
+                                    comercial involuntaria o la
+                                    cercanía a las fechas de vencimiento,
+                                    imposibilitando su venta
+                                    ordinaria a pesar de mantener intacto su
+                                    valor nutricional.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="p-2 ps-md-4">
+                                <h3 class="h4 fw-bold text-dark mb-3">La
+                                    Paradoja Social y Ambiental
+                                </h3>
+                                <p class="text-muted small lh-base">
+                                    Mientras los vertederos reciben cargas
+                                    críticas de residuos
+                                    orgánicos aprovechables, decenas de
+                                    fundaciones, comedores
+                                    comunitarios y albergues ubicados dentro de
+                                    la misma provincia
+                                    enfrentan dificultades constantes para
+                                    asegurar raciones diarias de
+                                    comida a familias y personas en
+                                    vulnerabilidad social.
+                                </p>
+                                <p class="text-muted small lh-base mb-0">
+                                    <strong>FoodLink</strong> actúa como el
+                                    puente digital que elimina
+                                    esta paradoja, transformando la ineficiencia
+                                    logística comercial en
+                                    asistencia humanitaria directa estructurada.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- equipo y respaldo institucunal-->
+                <section class="content-card mb-5">
+                    <div class="text-center mb-5">
+                        <span class="text-uppercase fw-bold text-success section-eyebrow-sm">Ingeniería
+                            con
+                            Propósito</span>
+                        <h3 class="h4 fw-bold text-dark mt-1">Equipo de
+                            Co-fundadores y Desarrolladores
+                        </h3>
+                    </div>
+
+                    <div class="row g-4 mb-5">
+                        <!--  1: Axell García -->
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div
+                                class="dev-card p-4 text-center h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="avatar-placeholder"><i
+                                            class="bi bi-person-fill"></i>
+                                    </div>
+                                    <h4 class="h6 fw-bold text-dark mb-1">Axell
+                                        García</h4>
+                                    <span class="text-muted d-block mb-3 dev-role">Líder
+                                        de proyecto,
+                                        Desarrollador Senior
+                                    </span>
+                                </div>
+                                <a href="https://github.com" target="_blank"
+                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100 dev-profile-btn"><i
+                                        class="bi bi-github me-1"></i> Perfil
+                                    Profesional</a>
+                            </div>
+                        </div>
+                        <!-- Brandon Díaz -->
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div
+                                class="dev-card p-4 text-center h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="avatar-placeholder"><i
+                                            class="bi bi-person-fill"></i>
+                                    </div>
+                                    <h4
+                                        class="h6 fw-bold text-dark mb-1">Brandon
+                                        Díaz</h4>
+                                    <span class="text-muted d-block mb-3 dev-role">Líder
+                                        de
+                                        Front-End,
+                                        Desarrollador Senior</span>
+                                </div>
+                                <a href="https://linkedin.com" target="_blank"
+                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100 dev-profile-btn"><i
+                                        class="bi bi-linkedin me-1"></i>
+                                    Perfil Profesional</a>
+                            </div>
+                        </div>
+                        <!-- Jordan Soto -->
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div
+                                class="dev-card p-4 text-center h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="avatar-placeholder"><i
+                                            class="bi bi-person-fill"></i>
+                                    </div>
+                                    <h4 class="h6 fw-bold text-dark mb-1">Jordan
+                                        Soto</h4>
+                                    <span class="text-muted d-block mb-3 dev-role">Líder
+                                        de
+                                        Back-End, Desarrollador Senior</span>
+                                </div>
+                                <a href="https://github.com" target="_blank"
+                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100 dev-profile-btn"><i
+                                        class="bi bi-github me-1"></i> Perfil
+                                    Profesional</a>
+                            </div>
+                        </div>
+                        <!-- Jose Alfaro -->
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div
+                                class="dev-card p-4 text-center h-100 d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="avatar-placeholder"><i
+                                            class="bi bi-person-fill"></i>
+                                    </div>
+                                    <h4 class="h6 fw-bold text-dark mb-1">Jose
+                                        Alfaro</h4>
+                                    <span class="text-muted d-block mb-3 dev-role">Analista
+                                        de
+                                        Software QA, Analista Senior</span>
+                                </div>
+                                <a href="https://linkedin.com" target="_blank"
+                                    class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100 dev-profile-btn"><i
+                                        class="bi bi-linkedin me-1"></i>
+                                    Perfil Profesional</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="p-4 rounded-4 border text-center institutional-affiliation">
+                        <div
+                            class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3">
+                            <div
+                                class="bg-dark text-white fw-bold d-flex align-items-center justify-content-center rounded-3 shadow-sm uf-badge">
+                                UF
+                            </div>
+                            <div class="text-sm-start">
+                                <h4 class="h6 fw-bold mb-1 text-dark">Filiación
+                                    Académica e
+                                    Institucional</h4>
+                                <p class="text-muted small mb-0">Proyecto de
+                                    software desarrollado con
+                                    el respaldo técnico de la <strong>Escuela de
+                                        Ingeniería en Sistemas
+                                        de la Universidad Fidélitas</strong>.
+                                    Garantizando validez
+                                    arquitectónica, seguridad de datos y
+                                    excelencia en desarrollo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- cooperacion-->
+                <section class="mb-2">
+                    <div class="row g-4">
+                        <!-- Tarjeta de Conversión: Donantes -->
+                        <div class="col-12 col-md-6">
+                            <div
+                                class="cta-conversion-card cta-donante d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="text-success mb-2"><i
+                                            class="bi bi-shop fs-2"></i></div>
+                                    <h3 class="h4 fw-bold text-dark">¿Representa
+                                        a un establecimiento
+                                        comercial?</h3>
+                                    <p class="text-muted small my-3">Hoteles,
+                                        restaurantes,
+                                        distribuidores y supermercados pueden
+                                        mitigar pérdidas
+                                        tributarias y mermas operativas
+                                        registrándose como proveedores
+                                        oficiales de alimentos.</p>
+                                </div>
+                                <button
+                                    class="btn btn-cta btn-cta-donante fw-semibold"
+                                    onclick="alert('Redirigiendo a Formulario de Registro para Donantes Comerciales.')">
+                                    <i
+                                        class="bi bi-plus-circle-fill me-2"></i>Registrarse
+                                    como Donante
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- organizaciones beneficiarias -->
+                        <div class="col-12 col-md-6">
+                            <div
+                                class="cta-conversion-card cta-beneficiario d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="text-teal mb-2"><i
+                                            class="bi bi-heart-pulse-fill fs-2"></i></div>
+                                    <h3 class="h4 fw-bold text-dark">¿Es una
+                                        organización benéfica?</h3>
+                                    <p class="text-muted small my-3">Comedores
+                                        comunitarios, albergues y
+                                        centros de atención social autorizados
+                                        pueden postularse para
+                                        recibir lotes calificados de alimentos
+                                        aptos para consumo.</p>
+                                </div>
+                                <button
+                                    class="btn btn-cta btn-cta-beneficiario fw-semibold"
+                                    onclick="alert('Redirigiendo a Formulario de Solicitud para Organizaciones Beneficiarias.')">
+                                    <i
+                                        class="bi bi-shield-heart me-2"></i>Solicitar
+                                    Acceso como
+                                    Receptor
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- foter -->
+            <footer class="text-white pt-5 pb-4 px-4 px-md-5 site-footer">
+                <div class="row g-4 mb-4">
+                    <div class="col-12 col-md-6">
+                        <span
+                            class="fw-bold text-success fs-5 d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-app-indicator"></i> FoodLink
+                        </span>
+                        <p class="text-secondary mb-3 footer-desc-text">
+                            Infraestructura tecnológica dedicada al desarrollo
+                            de redes de economía
+                            circular, mitigación de mermas y fortalecimiento de
+                            la seguridad alimentaria
+                            en Costa Rica.
+                        </p>
+                        <div class="d-flex gap-3 fs-5 text-secondary">
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="LinkedIn"><i
+                                    class="bi bi-linkedin"></i></a>
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="Instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="X (Twitter)"><i
+                                    class="bi bi-twitter-x"></i></a>
+                            <a href="#"
+                                class="text-secondary text-decoration-none"
+                                aria-label="YouTube"><i
+                                    class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <h4 class="text-white fw-bold mb-3 footer-heading">
+                                    Plataforma</h4>
+                                <ul
+                                    class="list-unstyled d-flex flex-column gap-2 footer-link-list">
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Sobre
+                                            Nosotros</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Casos
+                                            de
+                                            Impacto</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Cumplimiento
+                                            ODS</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Prensa
+                                            y
+                                            Noticias</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <h4 class="text-white fw-bold mb-3 footer-heading">
+                                    Ecosistema</h4>
+                                <ul
+                                    class="list-unstyled d-flex flex-column gap-2 footer-link-list">
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Documentación
+                                            API</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Centro
+                                            de Ayuda</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Canal
+                                            de
+                                            Soporte</a></li>
+                                    <li><a href="#"
+                                            class="text-secondary text-decoration-none">Seguridad
+                                            e
+                                            Inocuidad</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="footer-divider">
+
+                <div class="mb-4">
+                    <div class="d-flex flex-wrap text-secondary footer-legal-links">
+                        <a href="#"
+                            class="text-secondary text-decoration-none me-3">Términos
+                            de
+                            Servicio</a>
+                        <a href="#"
+                            class="text-secondary text-decoration-none me-3">Política
+                            de
+                            Privacidad</a>
+                        <a href="#"
+                            class="text-secondary text-decoration-none">Gestión
+                            de Cookies</a>
+                    </div>
+                </div>
+
+                <div
+                    class="pt-3 border-top border-dark d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 text-secondary footer-bottom">
+                    <div>
+                        <span class="d-block">© 2026 Universidad
+                            Fidélitas</span>
+                        <span class="text-muted footer-subtext">Proyecto de Ingeniería
+                            Cliente/Servidor</span>
+                    </div>
+                    <span class="fw-medium">San José, CR</span>
+                </div>
+            </footer>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>
