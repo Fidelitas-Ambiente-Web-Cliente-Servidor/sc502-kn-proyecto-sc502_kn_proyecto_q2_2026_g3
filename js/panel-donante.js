@@ -75,6 +75,27 @@ formDonacion.addEventListener("submit", function (event) {
         return;
     }
 
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+
+    const fechaVencimiento = new Date(fecha + "T00:00:00");
+
+     if (fechaVencimiento < hoy) {
+    mensajeDonacion.textContent = "La fecha de vencimiento no puede ser anterior a hoy.";
+    mensajeDonacion.className = "mensaje-error";
+    return;
+     }
+
+     const cantidadValida = /^\d+(\.\d+)?\s*(kg|g|cajas?|bolsas?|unidades?|paquetes?|litros?|l)?$/i;
+
+    if (!cantidadValida.test(cantidad)) {
+    mensajeDonacion.textContent =
+        "Ingrese una cantidad válida. Ejemplo: 10 kg, 5 cajas o 20 unidades.";
+    mensajeDonacion.className = "mensaje-error";
+    return;
+    }
+
+
     const datos = new FormData();
     datos.append("producto", producto);
     datos.append("cantidad", cantidad);
