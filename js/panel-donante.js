@@ -23,12 +23,39 @@ function claseEstado(estado) {
 
 function agregarFilaDonacion(donacion) {
     const fila = document.createElement("tr");
+
     fila.innerHTML = `
         <td>${limpiarTexto(donacion.producto)}</td>
         <td>${limpiarTexto(donacion.cantidad)}</td>
-        <td><span class="badge ${claseEstado(donacion.estado)}">${limpiarTexto(donacion.estado)}</span></td>
-        <td><button class="btn btn-sm btn-outline-secondary" type="button">Ver</button></td>
+        <td>
+            <span class="badge ${claseEstado(donacion.estado)}">
+                ${limpiarTexto(donacion.estado)}
+            </span>
+        </td>
+        <td>
+            <button class="btn btn-sm btn-outline-secondary btn-ver" type="button">
+                Ver
+            </button>
+        </td>
     `;
+
+    fila.querySelector(".btn-ver").addEventListener("click", function () {
+        document.getElementById("detalleProducto").textContent = donacion.producto;
+        document.getElementById("detalleCantidad").textContent = donacion.cantidad;
+        document.getElementById("detalleEstado").textContent = donacion.estado;
+        document.getElementById("detalleFecha").textContent =
+            donacion.fecha_vencimiento || "No especificada";
+        document.getElementById("detalleUbicacion").textContent =
+            donacion.ubicacion || "No especificada";
+        document.getElementById("detalleComentario").textContent =
+            donacion.comentario || "Sin comentario";
+
+        const modal = new bootstrap.Modal(
+            document.getElementById("modalDonacion")
+        );
+
+        modal.show();
+    });
 
     tablaDonaciones.append(fila);
     totalDonaciones.textContent = tablaDonaciones.rows.length;
