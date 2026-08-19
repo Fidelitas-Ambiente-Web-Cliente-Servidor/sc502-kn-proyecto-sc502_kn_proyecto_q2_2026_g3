@@ -1,3 +1,4 @@
+<?php $disponibles = $disponibles ?? []; ?>
 <!DOCTYPE html>
 <html lang="es">
 
